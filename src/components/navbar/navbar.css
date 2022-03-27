@@ -1,0 +1,24 @@
+.videolib-nav-head {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--font-clr);
+  margin-left: 4rem;
+}
+
+.videolib-nav-search-icon {
+  background-color: var(--border-clr);
+  color: var(--gray-shade4);
+  border: 1px solid var(--light-primary-clr);
+}
+
+.videolib-nav-icon-cont-width-reset {
+  width: 8rem;
+}
+
+.videolib-nav-icon-clr {
+  color: var(--custom-dark-clr);
+}
+
+.videolib-nav-user-icon {
+  font-size: 1.2rem;
+}
