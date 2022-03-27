@@ -5,12 +5,12 @@ function VideoListingPage() {
   return (
     <div>
       <Navbar />
-      <section class="d-flex d-flex-gap">
+      <section className="d-flex d-flex-gap">
         <Sidebar />
         <div>
           <Chips />
 
-          <div class="videolib-homepage-videos-cont">
+          <div className="videolib-homepage-videos-cont">
             <VerticalCard />
             <VerticalCard />
             <VerticalCard />

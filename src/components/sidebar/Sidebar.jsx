@@ -4,33 +4,33 @@ import "./sidebar.css";
 function Sidebar() {
   return (
     <div>
-      <div class="videolib-drawer-container">
-        <div class="videolib-list-container">
-          <ul class="videolib-list">
-            <li class="videolib-list-item">
-              <i class="fa-solid fa-house videolib-drawer-icon"></i> Home
+      <div className="videolib-drawer-container">
+        <div className="videolib-list-container">
+          <ul className="videolib-list">
+            <li className="videolib-list-item">
+              <i className="fa-solid fa-house videolib-drawer-icon"></i> Home
             </li>
-            <li class="videolib-list-item">
-              <i class="fa-brands fa-safari videolib-drawer-icon"></i> Explore
+            <li className="videolib-list-item">
+              <i className="fa-brands fa-safari videolib-drawer-icon"></i> Explore
             </li>
-            <li class="videolib-list-item">
-              <i class="fa-brands fa-google-play videolib-drawer-icon"></i>
+            <li className="videolib-list-item">
+              <i className="fa-brands fa-google-play videolib-drawer-icon"></i>
               Playlist
             </li>
           </ul>
         </div>
 
-        <div class="videolib-list-container">
-          <ul class="videolib-list">
-            <li class="videolib-list-item">
-              <i class="fa-solid fa-clock-rotate-left videolib-drawer-icon"></i>
+        <div className="videolib-list-container">
+          <ul className="videolib-list">
+            <li className="videolib-list-item">
+              <i className="fa-solid fa-clock-rotate-left videolib-drawer-icon"></i>
               History
             </li>
-            <li class="videolib-list-item">
-              <i class="fa-solid fa-clock videolib-drawer-icon"></i> Watch later
+            <li className="videolib-list-item">
+              <i className="fa-solid fa-clock videolib-drawer-icon"></i> Watch later
             </li>
-            <li class="videolib-list-item">
-              <i class="fa-solid fa-thumbs-up videolib-drawer-icon"></i> Liked
+            <li className="videolib-list-item">
+              <i className="fa-solid fa-thumbs-up videolib-drawer-icon"></i> Liked
               videos
             </li>
           </ul>
