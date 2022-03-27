@@ -1,0 +1,13 @@
+.videolib-homepage-chip-cont {
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid var(--custom-pri-clr);
+  border-top: 1px solid var(--custom-pri-clr);
+  margin: 1rem 1.6rem;
+}
+
+.videolib-homepage-chip-custom-sty {
+  background-color: var(--border-clr);
+  color: var(--gray-shade3);
+}

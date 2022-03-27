@@ -1,0 +1,22 @@
+.videolib-card-imgresize {
+  width: 12rem;
+  height: 7rem;
+}
+
+.videolib-card-resize {
+  width: 27rem;
+}
+
+.videolib-card-subheading {
+  margin-bottom: 3px;
+  margin-top: 5px;
+}
+
+.videolib-card-subheading-common-sty {
+  font-weight: 400;
+  letter-spacing: 0px;
+}
+
+.videolib-cardheading-resize {
+  font-size: 0.9rem;
+}

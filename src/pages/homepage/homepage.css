@@ -1,0 +1,26 @@
+.videolib-homepage-videos-cont {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.d-flex-gap {
+  gap: 2rem;
+}
+
+.videolib-banner-cont {
+  justify-content: center;
+}
+
+.videolib-banner-img {
+  width: 68rem;
+  height: 15rem;
+  object-fit: cover;
+}
+
+.flex-d-col {
+  flex-direction: column;
+}
