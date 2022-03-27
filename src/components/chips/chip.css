@@ -8,6 +8,6 @@
 }
 
 .videolib-homepage-chip-custom-sty {
-  background-color: #f2f2f2;
-  color: #555555;
+  background-color: var(--border-clr);
+  color: var(--gray-shade3);
 }
