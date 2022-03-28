@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, HorizontalCard, Sidebar} from "../../components/index";
+import { Navbar, HorizontalCard, Sidebar, LargeHorizontalCard} from "../../components/index";
 
 function WatchLater() {
   return (
@@ -10,14 +10,8 @@ function WatchLater() {
         <div>
 
           <div className="videolib-homepage-videos-cont">
-            <HorizontalCard />
-            <HorizontalCard />
-            <HorizontalCard />
-            <HorizontalCard />
-            <HorizontalCard />
-            <HorizontalCard />
-            <HorizontalCard />
-            <HorizontalCard />
+            <LargeHorizontalCard/>
+            
           </div>
         </div>
       </section>

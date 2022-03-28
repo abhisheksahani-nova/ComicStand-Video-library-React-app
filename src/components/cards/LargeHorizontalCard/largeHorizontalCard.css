@@ -1,10 +1,10 @@
-.videolib-card-imgresize {
-  width: 12rem;
-  height: 7rem;
+.videolib-hr-largecard-imgresize {
+  width: 20rem;
+  height: 11rem;
 }
 
-.videolib-card-resize {
-  width: 27rem;
+.videolib-hr-largecard-resize {
+  width: 50rem;
 }
 
 .videolib-card-subheading {
@@ -19,4 +19,12 @@
 
 .videolib-cardheading-resize {
   font-size: 0.9rem;
+}
+
+.f-size-small {
+  font-size: smaller;
+}
+
+.mt-1 {
+  margin-top: 1rem;
 }
