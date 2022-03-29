@@ -22,7 +22,6 @@ function Signup() {
 
     (async () => {
       try {
-        console.log("inside async")
         const response = await axios.post("/api/auth/signup", userData);
         localStorage.setItem(
           "token",
@@ -39,7 +38,6 @@ function Signup() {
     <>
       <Navbar />
       <section className="login_form_container d-flex">
-        {console.log(userSignupData)}
         <div className="card-basic login_form">
           <h2 className="t-align-center mt-2 mb-2">Signup</h2>
 

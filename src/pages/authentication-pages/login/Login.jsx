@@ -12,7 +12,6 @@ function Login() {
   const navigate = useNavigate();
 
   function handleUserLogin() {
-    console.log("login fn works")
     (async () => {
       try {
         const response = await axios.post("/api/auth/login", userLoginData);
@@ -29,7 +28,6 @@ function Login() {
 
   return (
     <section className="login_form_container d-flex">
-      {console.log(userLoginData)}
       <div className="card-basic login_form">
         <h2 className="t-align-center mt-2 mb-2">Login</h2>
         <div className="inp-container mb-1">

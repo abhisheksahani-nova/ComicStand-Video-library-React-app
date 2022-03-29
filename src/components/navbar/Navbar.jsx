@@ -1,5 +1,6 @@
 import React from "react";
 import "./navbar.css";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -21,15 +22,15 @@ function Navbar() {
 
         <div className="nav-innerContainer nav-icon-container width-reset inherit-clr mr-1 videolib-nav-icon-cont-width-reset">
           <div className="flex-col-center">
-            <a className="videolib-nav-icon-clr videolib-nav-user-icon" href="#">
+            <NavLink to="login" className="videolib-nav-icon-clr videolib-nav-user-icon">
               <i className="fa-regular fa-user"></i>
-            </a>
+            </NavLink>
           </div>
 
           <div className="flex-col-center">
-            <a className="videolib-nav-icon-clr nav-icon" href="#">
+            <NavLink to="/signup" className="videolib-nav-icon-clr nav-icon">
               <i className="fa-regular fa-bell"></i>
-            </a>
+            </NavLink>
           </div>
         </div>
       </nav>

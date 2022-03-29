@@ -6,7 +6,7 @@
   height: 8.875rem;
 }
 
-.position-abs{
+.position-abs {
   position: absolute;
 }
 
@@ -20,8 +20,12 @@
   right: 1rem;
 }
 
-.verticalCard-watchLater-icon-position{
+.verticalCard-watchLater-icon-position {
   top: 0.5rem;
   right: 0.5rem;
   color: var(--custom-pri-clr);
+}
+
+.verticalCard-watchLater-icon-select-clr {
+  color: var(--dark-primary-clr);
 }
