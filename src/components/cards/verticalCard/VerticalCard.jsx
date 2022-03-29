@@ -12,8 +12,9 @@ function VerticalCard({ video }) {
             className="card-img videolib-verticalcard-img-resize"
             src={img}
           />
+          <i class="fa-solid fa-clock position-abs verticalCard-watchLater-icon-position"></i>
 
-          <div>
+          <div className="badge-container">
             <h4 className="card-heading videolib-cardheading-resize">
               {title}
             </h4>
@@ -25,6 +26,8 @@ function VerticalCard({ video }) {
                 {videoViews} views . {year} years ago
               </small>
             </div>
+            <i class="fa-regular fa-thumbs-up position-abs verticalCard-like-icon-position"></i>
+            <i class="fa-regular fa-thumbs-down position-abs verticalCard-dislike-icon-position"></i>
           </div>
         </div>
       </div>

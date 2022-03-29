@@ -5,3 +5,23 @@
 .videolib-verticalcard-img-resize {
   height: 8.875rem;
 }
+
+.position-abs{
+  position: absolute;
+}
+
+.verticalCard-like-icon-position {
+  bottom: 1rem;
+  right: 3rem;
+}
+
+.verticalCard-dislike-icon-position {
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.verticalCard-watchLater-icon-position{
+  top: 0.5rem;
+  right: 0.5rem;
+  color: var(--custom-pri-clr);
+}

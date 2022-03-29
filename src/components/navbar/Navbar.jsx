@@ -8,7 +8,7 @@ function Navbar() {
         <div className="nav-innerContainer font-clr">
           <i className="fa-solid fa-bars"></i>
           <h2 className="nav-heading mr-4 font-resize videolib-nav-head">
-            Travellers
+            ComicStand
           </h2>
         </div>
 
