@@ -1,8 +1,10 @@
 import React from "react";
 import "./verticalCard.css";
+import { useWatchLater } from "../../../context/watchLater-context";
 
 function VerticalCard({ video }) {
-  const { title, channelName, img, videoViews, year } = video;
+  const { _id, title, channelName, img, videoViews, year } = video;
+  const { watchLaterVideos, setWatchLaterVideos } = useWatchLater();
 
   return (
     <div>
@@ -12,7 +14,17 @@ function VerticalCard({ video }) {
             className="card-img videolib-verticalcard-img-resize"
             src={img}
           />
-          <i class="fa-solid fa-clock position-abs verticalCard-watchLater-icon-position"></i>
+          {watchLaterVideos.find((item) => item._id == _id) ? (
+            <i
+              className="fa-solid fa-clock position-abs verticalCard-watchLater-icon-position"
+              onClick={() => handleAddToWatchLater}
+            ></i>
+          ) : (
+            <i
+              className="fa-solid fa-clock position-abs verticalCard-watchLater-icon-position"
+              onClick={() => handleRemoveFromWatchLater}
+            ></i>
+          )}
 
           <div className="badge-container">
             <h4 className="card-heading videolib-cardheading-resize">
@@ -26,8 +38,8 @@ function VerticalCard({ video }) {
                 {videoViews} views . {year} years ago
               </small>
             </div>
-            <i class="fa-regular fa-thumbs-up position-abs verticalCard-like-icon-position"></i>
-            <i class="fa-regular fa-thumbs-down position-abs verticalCard-dislike-icon-position"></i>
+            <i className="fa-regular fa-thumbs-up position-abs verticalCard-like-icon-position"></i>
+            <i className="fa-regular fa-thumbs-down position-abs verticalCard-dislike-icon-position"></i>
           </div>
         </div>
       </div>
