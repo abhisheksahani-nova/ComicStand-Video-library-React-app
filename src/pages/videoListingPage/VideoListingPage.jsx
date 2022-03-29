@@ -1,7 +1,10 @@
 import React from "react";
 import { Navbar, Sidebar, Chips, VerticalCard } from "../../components/index";
+import { useVideos } from "../../context/videos-context";
 
 function VideoListingPage() {
+  const { videos } = useVideos();
+
   return (
     <div>
       <Navbar />
@@ -11,14 +14,9 @@ function VideoListingPage() {
           <Chips />
 
           <div className="videolib-homepage-videos-cont">
-            <VerticalCard />
-            <VerticalCard />
-            <VerticalCard />
-            <VerticalCard />
-            <VerticalCard />
-            <VerticalCard />
-            <VerticalCard />
-            <VerticalCard />
+            {videos.map((video) => {
+              return <VerticalCard key={video._id} video={video} />;
+            })}
           </div>
         </div>
       </section>

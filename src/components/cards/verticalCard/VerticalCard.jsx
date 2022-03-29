@@ -1,26 +1,28 @@
 import React from "react";
 import "./verticalCard.css";
 
-function VerticalCard() {
+function VerticalCard({ video }) {
+  const { title, channelName, img, videoViews, year } = video;
+
   return (
     <div>
       <div className="videolib-verticalcard-resize">
         <div className="badge-container">
           <img
             className="card-img videolib-verticalcard-img-resize"
-            src="https://i.ytimg.com/vi/JN11JClxdA4/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCKOKn4160XzBcxOA5UZbcHiqwNKg"
+            src={img}
           />
 
           <div>
             <h4 className="card-heading videolib-cardheading-resize">
-              Into The Wild
+              {title}
             </h4>
             <div className="d-flex flex-d-col">
               <small className="card-subHeading videolib-card-subheading videolib-card-subheading-common-sty">
-                Rick Steves' Europe
+                {channelName}
               </small>
               <small className="card-subHeading videolib-card-subheading-common-sty mb-1">
-                14M views . 4 years ago
+                {videoViews} views . {year} years ago
               </small>
             </div>
           </div>
