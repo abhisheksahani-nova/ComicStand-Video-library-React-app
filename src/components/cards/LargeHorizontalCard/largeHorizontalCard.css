@@ -4,7 +4,7 @@
 }
 
 .videolib-hr-largecard-resize {
-  width: 50rem;
+  width: 60rem;
 }
 
 .videolib-card-subheading {
@@ -27,4 +27,8 @@
 
 .mt-1 {
   margin-top: 1rem;
+}
+
+.largeHorizontalCard-font-w{
+  font-weight: 500;
 }

@@ -1,47 +1,22 @@
 import React from "react";
 import "./verticalCard.css";
 import { useWatchLater } from "../../../context/watchLater-context";
-import axios from "axios";
+import { useLikedVideos } from "../../../context/likedVideos-context";
 
 function VerticalCard({ video }) {
   const { _id, title, channelName, img, videoViews, year } = video;
-  const { watchLaterVideos, setWatchLaterVideos } = useWatchLater();
-  const token = localStorage.getItem("token");
+  const {
+    watchLaterVideos,
+    handleAddToWatchLater,
+    handleRemoveFromWatchLater,
+  } = useWatchLater();
 
-  const handleAddToWatchLater = async (video) => {
-    try {
-      const response = await axios.post(
-        "/api/user/watchlater",
-        { video },
-        {
-          headers: {
-            authorization: token,
-          },
-        }
-      );
-      setWatchLaterVideos(response.data.watchlater);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const handleRemoveFromWatchLater = async (id) => {
-    try {
-      const response = await axios.delete(`/api/user/watchlater/${id}`, {
-        headers: {
-          authorization: token,
-        },
-      });
-      setWatchLaterVideos(response.data.watchlater);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const { likedVideos, addToLikedVideos, removeFromLikedVideos } =
+    useLikedVideos();
 
   return (
     <div>
       <div className="videolib-verticalcard-resize">
-        {console.log(watchLaterVideos)}
         <div className="badge-container">
           <img
             className="card-img videolib-verticalcard-img-resize"
@@ -49,12 +24,12 @@ function VerticalCard({ video }) {
           />
           {watchLaterVideos.find((item) => item._id === _id) ? (
             <i
-              className="fa-solid fa-clock position-abs verticalCard-watchLater-icon-position "
+              className="fa-solid fa-clock position-abs verticalCard-watchLater-icon-position verticalCard-watchLater-icon-select-clr"
               onClick={() => handleRemoveFromWatchLater(_id)}
             ></i>
           ) : (
             <i
-              className="fa-solid fa-clock position-abs verticalCard-watchLater-icon-position verticalCard-watchLater-icon-select-clr"
+              className="fa-solid fa-clock position-abs verticalCard-watchLater-icon-position"
               onClick={() => handleAddToWatchLater(video)}
             ></i>
           )}
@@ -71,8 +46,18 @@ function VerticalCard({ video }) {
                 {videoViews} views . {year} years ago
               </small>
             </div>
-            <i className="fa-regular fa-thumbs-up position-abs verticalCard-like-icon-position"></i>
-            <i className="fa-regular fa-thumbs-down position-abs verticalCard-dislike-icon-position"></i>
+            {likedVideos.find((item) => item._id == _id) ? (
+              <i
+                onClick={() => removeFromLikedVideos(_id)}
+                className="fa-solid fa-thumbs-up position-abs verticalCard-like-icon-position"
+              ></i>
+            ) : (
+              <i
+                onClick={() => addToLikedVideos(video)}
+                className="fa-solid fa-thumbs-up position-abs verticalCard-like-icon-position"
+              ></i>
+            )}
+            <i className="fa-solid fa-thumbs-down position-abs verticalCard-dislike-icon-position"></i>
           </div>
         </div>
       </div>
