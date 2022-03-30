@@ -1,8 +1,11 @@
 import React from "react";
 import "./homepage.css";
 import { Navbar, Sidebar, Chips, VerticalCard } from "../../components/index";
+import { useVideos } from "../../context/videos-context";
 
 function Homepage() {
+  const { videos } = useVideos();
+
   return (
     <div>
       <Navbar />
@@ -20,14 +23,9 @@ function Homepage() {
           </div>
 
           <div className="videolib-homepage-videos-cont">
-            <VerticalCard />
-            <VerticalCard />
-            <VerticalCard />
-            <VerticalCard />
-            <VerticalCard />
-            <VerticalCard />
-            <VerticalCard />
-            <VerticalCard />
+            {videos.map((video) => {
+              return <VerticalCard key={video._id} video={video} />;
+            })}
           </div>
         </div>
       </section>
