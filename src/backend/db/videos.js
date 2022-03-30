@@ -14,6 +14,9 @@ export const videos = [
     img: "https://i.ytimg.com/vi/WmIS_icNcLk/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBKf25HoKWqAD4Wx6GuqOWMOWTuDA",
     year: 7,
     views: "8.2M",
+    genre: "Anecdotal Comedy",
+    nationality: "US",
+    popularity: "International",
   },
   {
     _id: "Adffdgssj_BbK",
@@ -25,6 +28,9 @@ export const videos = [
     img: "https://i.ytimg.com/vi/mm1HgQbXFEE/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCA804r1Yv3ItqhsZsEBzUmemDadA",
     year: 6,
     views: "7.4M",
+    genre: "Improv",
+    nationality: "US",
+    popularity: "International",
   },
   {
     _id: "Y_RddhshYRJ",
@@ -37,6 +43,9 @@ export const videos = [
     img: "https://i.ytimg.com/vi/zNyqYOUxBrY/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBnAOZKEEmxm0NUkHjwCgDhUqWl4A",
     year: 6,
     views: "7M",
+    genre: "Satire",
+    nationality: "US",
+    popularity: "International",
   },
   {
     _id: "HdshsHDSSR",
@@ -48,6 +57,9 @@ export const videos = [
     img: "https://i.ytimg.com/vi/nNx5tnqD9e0/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAtr89SQWhxvqQ-E_4q-ZEdgux21A",
     year: 3,
     views: "4.5M",
+    genre: "Anecdotal Comedy",
+    nationality: "US",
+    popularity: "International",
   },
   {
     _id: "SGGhajjfxH",
@@ -59,6 +71,9 @@ export const videos = [
     img: "https://i.ytimg.com/vi/28vas-3WmUg/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA6ejtL-Y_-ROm7vlOwPxFg3nKZEA",
     year: 8,
     views: "2M",
+    genre: "Dark Comedy",
+    nationality: "US",
+    popularity: "International",
   },
   {
     _id: "KhdhdsFAHJ",
@@ -70,6 +85,9 @@ export const videos = [
     img: "https://i.ytimg.com/vi/T0lGP0FeZ7Y/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDXaRSRlwDuBI1DEV-Lo81ejropSQ",
     year: 2,
     views: "2.7M",
+    genre: "Observational Comedy",
+    nationality: "US",
+    popularity: "International",
   },
   {
     _id: "OPswgwgzgzY",
@@ -81,6 +99,9 @@ export const videos = [
     img: "https://i.ytimg.com/vi/oItPQRZ3xpI/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLARRx_vKhF-mk8v5L8XGHF5GlBX_A",
     year: 4,
     views: "3M",
+    genre: "Observational Comedy",
+    nationality: "US",
+    popularity: "International",
   },
   {
     _id: "MswsffsTYE",
@@ -92,5 +113,8 @@ export const videos = [
     img: "https://i.ytimg.com/vi/ButlizwQXnU/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC8na2iVJUeVlnGIfzw5OwbNJvbtQ",
     year: 5,
     views: "4.9M",
+    genre: "Anecdotal Comedy",
+    nationality: "US",
+    popularity: "International",
   },
 ];
