@@ -22,7 +22,7 @@ function Navbar() {
 
         <div className="nav-innerContainer nav-icon-container width-reset inherit-clr mr-1 videolib-nav-icon-cont-width-reset">
           <div className="flex-col-center">
-            <NavLink to="login" className="videolib-nav-icon-clr videolib-nav-user-icon">
+            <NavLink to="signup" className="videolib-nav-icon-clr videolib-nav-user-icon">
               <i className="fa-regular fa-user"></i>
             </NavLink>
           </div>
