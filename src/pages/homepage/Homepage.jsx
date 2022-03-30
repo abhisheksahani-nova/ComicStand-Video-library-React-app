@@ -4,7 +4,7 @@ import { Navbar, Sidebar, Chips, VerticalCard } from "../../components/index";
 import { useVideosAndCategory } from "../../context/videos-context";
 
 function Homepage() {
-  const { videos, category } = useVideosAndCategory();
+  const { videos } = useVideosAndCategory();
 
   return (
     <div>
