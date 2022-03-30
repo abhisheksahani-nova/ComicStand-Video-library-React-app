@@ -4,7 +4,8 @@ import { useWatchLater } from "../../../context/watchLater-context";
 import { useLikedVideos } from "../../../context/likedVideos-context";
 
 function VerticalCard({ video }) {
-  const { _id, title, channelName, img, videoViews, year } = video;
+  const { _id, title, channelName, img, views, year } = video;
+  const token = localStorage.getItem("token");
   const {
     watchLaterVideos,
     handleAddToWatchLater,
@@ -25,12 +26,12 @@ function VerticalCard({ video }) {
           {watchLaterVideos.find((item) => item._id === _id) ? (
             <i
               className="fa-solid fa-clock position-abs verticalCard-watchLater-icon-position verticalCard-watchLater-icon-select-clr"
-              onClick={() => handleRemoveFromWatchLater(_id)}
+              onClick={() => handleRemoveFromWatchLater(_id, token)}
             ></i>
           ) : (
             <i
               className="fa-solid fa-clock position-abs verticalCard-watchLater-icon-position"
-              onClick={() => handleAddToWatchLater(video)}
+              onClick={() => handleAddToWatchLater(video, token)}
             ></i>
           )}
 
@@ -43,17 +44,17 @@ function VerticalCard({ video }) {
                 {channelName}
               </small>
               <small className="card-subHeading videolib-card-subheading-common-sty mb-1">
-                {videoViews} views . {year} years ago
+                {views} views . {year} years ago
               </small>
             </div>
             {likedVideos.find((item) => item._id == _id) ? (
               <i
-                onClick={() => removeFromLikedVideos(_id)}
+                onClick={() => removeFromLikedVideos(_id, token)}
                 className="fa-solid fa-thumbs-up position-abs verticalCard-like-icon-position"
               ></i>
             ) : (
               <i
-                onClick={() => addToLikedVideos(video)}
+                onClick={() => addToLikedVideos(video, token)}
                 className="fa-solid fa-thumbs-up position-abs verticalCard-like-icon-position"
               ></i>
             )}

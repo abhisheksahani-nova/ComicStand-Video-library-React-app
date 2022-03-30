@@ -6,9 +6,8 @@ const LikedVideosContext = createContext();
 const LikedVideosProvider = ({ children }) => {
   const [likedVideos, setLikedVideos] = useState([]);
 
-  const addToLikedVideos = async (video) => {
+  const addToLikedVideos = async (video, token) => {
     try {
-      const token = localStorage.getItem("token");
       const response = await axios.post(
         "/api/user/likes",
         { video },
@@ -24,9 +23,8 @@ const LikedVideosProvider = ({ children }) => {
     }
   };
 
-  const removeFromLikedVideos = async (id) => {
+  const removeFromLikedVideos = async (id, token) => {
     try {
-      const token = localStorage.getItem("token");
       const response = await axios.delete(`/api/user/likes/${id}`, {
         headers: {
           authorization: token,

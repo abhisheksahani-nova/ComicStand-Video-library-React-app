@@ -3,7 +3,7 @@ import "./largeHorizontalCard.css";
 import {useLikedVideos} from "../../../context/likedVideos-context";
 
 function LargeHorizontalCard({ video }) {
-  const {_id, title, channelName, img, videoViews, year, description} = video
+  const {_id, title, channelName, img, views, year, description} = video
 
   const { likedVideos, addToLikedVideos, removeFromLikedVideos } =
     useLikedVideos();
@@ -28,7 +28,7 @@ function LargeHorizontalCard({ video }) {
                 {channelName}
               </small>
               <small className="card-subHeading videolib-card-subheading-common-sty">
-                {videoViews} views . {year} years ago
+                {views} views . {year} years ago
               </small>
 
               <p className="card-subHeading videolib-card-subheading-common-sty f-size-small mt-1">

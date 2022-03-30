@@ -13,7 +13,7 @@ export const videos = [
     channelName: "Just for Laughs",
     img: "https://i.ytimg.com/vi/WmIS_icNcLk/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBKf25HoKWqAD4Wx6GuqOWMOWTuDA",
     year: 7,
-    videoViews: "8.2M",
+    views: "8.2M",
   },
   {
     _id: "Adffdgssj_BbK",
@@ -24,7 +24,7 @@ export const videos = [
     channelName: "Just for Laughs",
     img: "https://i.ytimg.com/vi/mm1HgQbXFEE/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCA804r1Yv3ItqhsZsEBzUmemDadA",
     year: 6,
-    videoViews: "7.4M",
+    views: "7.4M",
   },
   {
     _id: "Y_RddhshYRJ",
@@ -36,7 +36,7 @@ export const videos = [
     channelName: "Just for Laughs",
     img: "https://i.ytimg.com/vi/zNyqYOUxBrY/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBnAOZKEEmxm0NUkHjwCgDhUqWl4A",
     year: 6,
-    videoViews: "7M",
+    views: "7M",
   },
   {
     _id: "HdshsHDSSR",
@@ -47,7 +47,7 @@ export const videos = [
     channelName: "Just for Laughs",
     img: "https://i.ytimg.com/vi/nNx5tnqD9e0/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAtr89SQWhxvqQ-E_4q-ZEdgux21A",
     year: 3,
-    videoViews: "4.5M",
+    views: "4.5M",
   },
   {
     _id: "SGGhajjfxH",
@@ -58,7 +58,7 @@ export const videos = [
     channelName: "Just for Laughs",
     img: "https://i.ytimg.com/vi/28vas-3WmUg/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA6ejtL-Y_-ROm7vlOwPxFg3nKZEA",
     year: 8,
-    videoViews: "2M",
+    views: "2M",
   },
   {
     _id: "KhdhdsFAHJ",
@@ -69,7 +69,7 @@ export const videos = [
     channelName: "Just for Laughs",
     img: "https://i.ytimg.com/vi/T0lGP0FeZ7Y/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDXaRSRlwDuBI1DEV-Lo81ejropSQ",
     year: 2,
-    videoViews: "2.7M",
+    views: "2.7M",
   },
   {
     _id: "OPswgwgzgzY",
@@ -80,7 +80,7 @@ export const videos = [
     channelName: "Just for Laughs",
     img: "https://i.ytimg.com/vi/oItPQRZ3xpI/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLARRx_vKhF-mk8v5L8XGHF5GlBX_A",
     year: 4,
-    videoViews: "3M",
+    views: "3M",
   },
   {
     _id: "MswsffsTYE",
@@ -91,6 +91,6 @@ export const videos = [
     channelName: "Just for Laughs",
     img: "https://i.ytimg.com/vi/ButlizwQXnU/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC8na2iVJUeVlnGIfzw5OwbNJvbtQ",
     year: 5,
-    videoViews: "4.9M",
+    views: "4.9M",
   },
 ];

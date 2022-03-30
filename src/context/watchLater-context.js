@@ -6,9 +6,8 @@ const WatchLaterContext = createContext();
 const WatchLaterProvider = ({ children }) => {
   const [watchLaterVideos, setWatchLaterVideos] = useState([]);
 
-  const handleAddToWatchLater = async (video) => {
+  const handleAddToWatchLater = async (video, token) => {
     try {
-      const token = localStorage.getItem("token");
       const response = await axios.post(
         "/api/user/watchlater",
         { video },
@@ -24,9 +23,8 @@ const WatchLaterProvider = ({ children }) => {
     }
   };
 
-  const handleRemoveFromWatchLater = async (id) => {
+  const handleRemoveFromWatchLater = async (id, token) => {
     try {
-      const token = localStorage.getItem("token");
       const response = await axios.delete(`/api/user/watchlater/${id}`, {
         headers: {
           authorization: token,
