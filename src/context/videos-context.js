@@ -5,6 +5,7 @@ const VideosContext = createContext();
 
 const VideosProvider = ({ children }) => {
   const [videos, setVideos] = useState([]);
+  const [category, setCategory] = useState([]);
 
   useEffect(() => {
     (async () => {
@@ -17,13 +18,24 @@ const VideosProvider = ({ children }) => {
     })();
   }, []);
 
+  useEffect(() => {
+    (async () => {
+      try {
+        const response = await axios.get("/api/categories");
+        setCategory(response.data.categories);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+  }, []);
+
   return (
-    <VideosContext.Provider value={{ videos }}>
+    <VideosContext.Provider value={{ videos, category }}>
       {children}
     </VideosContext.Provider>
   );
 };
 
-const useVideos = () => useContext(VideosContext);
+const useVideosAndCategory = () => useContext(VideosContext);
 
-export { VideosProvider, useVideos };
+export { VideosProvider, useVideosAndCategory };

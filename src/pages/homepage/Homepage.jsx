@@ -1,10 +1,10 @@
 import React from "react";
 import "./homepage.css";
 import { Navbar, Sidebar, Chips, VerticalCard } from "../../components/index";
-import { useVideos } from "../../context/videos-context";
+import { useVideosAndCategory } from "../../context/videos-context";
 
 function Homepage() {
-  const { videos } = useVideos();
+  const { videos, category } = useVideosAndCategory();
 
   return (
     <div>

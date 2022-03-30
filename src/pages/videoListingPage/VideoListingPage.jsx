@@ -1,9 +1,9 @@
 import React from "react";
 import { Navbar, Sidebar, Chips, VerticalCard } from "../../components/index";
-import { useVideos } from "../../context/videos-context";
+import { useVideosAndCategory } from "../../context/videos-context";
 
 function VideoListingPage() {
-  const { videos } = useVideos();
+  const { videos } = useVideosAndCategory();
 
   return (
     <div>
