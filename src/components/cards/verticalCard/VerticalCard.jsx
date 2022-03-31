@@ -2,6 +2,7 @@ import React from "react";
 import "./verticalCard.css";
 import { useWatchLater } from "../../../context/watchLater-context";
 import { useLikedVideos } from "../../../context/likedVideos-context";
+import { useHistoryVideos } from "../../../context/history-context";
 
 function VerticalCard({ video }) {
   const { _id, title, channelName, img, views, year } = video;
@@ -14,6 +15,8 @@ function VerticalCard({ video }) {
 
   const { likedVideos, addToLikedVideos, removeFromLikedVideos } =
     useLikedVideos();
+
+  const { addToHistory } = useHistoryVideos();
 
   return (
     <div>
@@ -39,6 +42,11 @@ function VerticalCard({ video }) {
             <h4 className="card-heading videolib-cardheading-resize">
               {title}
             </h4>
+            <i
+              onClick={() => addToHistory(video, token)}
+              class="fa-solid fa-circle-play position-abs verticalCard-play-icon-position"
+            ></i>
+
             <div className="d-flex flex-d-col">
               <small className="card-subHeading videolib-card-subheading videolib-card-subheading-common-sty">
                 {channelName}

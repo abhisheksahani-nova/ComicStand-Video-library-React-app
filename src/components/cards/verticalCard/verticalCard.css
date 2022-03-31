@@ -29,3 +29,8 @@
 .verticalCard-watchLater-icon-select-clr {
   color: var(--dark-primary-clr);
 }
+
+.verticalCard-play-icon-position {
+  top: 0;
+  right: 0.5rem;
+}
