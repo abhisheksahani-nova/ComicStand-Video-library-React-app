@@ -14,12 +14,12 @@ function HistoryVideos() {
         <Sidebar />
 
         <div className="likedVideos-outer-cont">
-          <div className="d-flex j-space-between mb-2">
+          {historyVideos.length > 0 ? <div className="d-flex j-space-between mb-2">
             <h1>History</h1>
             <button className="btn" onClick={() => clearFullHistory(token)}>
               Clear Full History
             </button>
-          </div>
+          </div> : ""}
 
           <div className="d-flex likedVideos-video-cont">
             {historyVideos.map((video) => {
