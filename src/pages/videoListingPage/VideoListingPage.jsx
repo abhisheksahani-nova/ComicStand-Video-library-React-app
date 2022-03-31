@@ -1,9 +1,17 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Navbar, Sidebar, Chips, VerticalCard } from "../../components/index";
-import { useVideos } from "../../context/videos-context";
+import { useVideosAndCategory } from "../../context/videos-context";
+import filteredVideosOnCategory from "../../utils/filterVideo";
 
 function VideoListingPage() {
-  const { videos } = useVideos();
+  const { videos } = useVideosAndCategory();
+  const [selectedCategory, setSelectedCategory] = useState("");
+
+  useEffect(() => {
+    setSelectedCategory("All");
+  },[])  
+
+  const filteredVideos = filteredVideosOnCategory(selectedCategory, videos);
 
   return (
     <div>
@@ -11,10 +19,10 @@ function VideoListingPage() {
       <section className="d-flex d-flex-gap">
         <Sidebar />
         <div>
-          <Chips />
+          <Chips setSelectedCategory={setSelectedCategory} />
 
           <div className="videolib-homepage-videos-cont">
-            {videos.map((video) => {
+            {filteredVideos.map((video) => {
               return <VerticalCard key={video._id} video={video} />;
             })}
           </div>
