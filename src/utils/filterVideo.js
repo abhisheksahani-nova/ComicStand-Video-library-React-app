@@ -1,23 +1,23 @@
 function filteredVideosOnCategory(selectedCategory, videos) {
-  let filterVideos = videos;
+  let filterdVideos = videos;
 
   if (selectedCategory == "All") {
-    return filterVideos;
+    return filterdVideos;
   } else if (selectedCategory == "International Comics") {
-    filterVideos = filterVideos.filter(
+    filterdVideos = filterdVideos.filter(
       (video) => video.popularity == "International"
     );
   } else if (selectedCategory == "Indian Comics") {
-    filterVideos = filterVideos.filter(
+    filterdVideos = filterdVideos.filter(
       (video) => video.nationality == "Indian"
     );
   } else {
-    filterVideos = filterVideos.filter(
+    filterdVideos = filterdVideos.filter(
       (video) => video.genre == selectedCategory
     );
   }
 
-  return filterVideos;
+  return filterdVideos;
 }
 
 export default filteredVideosOnCategory;

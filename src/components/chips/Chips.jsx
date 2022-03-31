@@ -6,20 +6,18 @@ function Chips({ setSelectedCategory }) {
   const { category } = useVideosAndCategory();
 
   return (
-    <div>
-      <div className="d-flex videolib-homepage-chip-cont">
-        {category.map(({ categoryName, _id }) => {
-          return (
-            <button
-              key={_id}
-              className="btn videolib-homepage-chip-custom-sty"
-              onClick={() => setSelectedCategory(categoryName)}
-            >
-              {categoryName}
-            </button>
-          );
-        })}
-      </div>
+    <div className="d-flex videolib-homepage-chip-cont">
+      {category.map(({ categoryName, _id }) => {
+        return (
+          <button
+            key={_id}
+            className="btn videolib-homepage-chip-custom-sty"
+            onClick={() => setSelectedCategory(categoryName)}
+          >
+            {categoryName}
+          </button>
+        );
+      })}
     </div>
   );
 }
