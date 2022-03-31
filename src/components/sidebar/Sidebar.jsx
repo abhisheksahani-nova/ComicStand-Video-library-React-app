@@ -29,7 +29,10 @@ function Sidebar() {
 
         <div className="videolib-list-container">
           <ul className="videolib-list">
-            <li className="videolib-list-item">
+            <li
+              className="videolib-list-item"
+              onClick={() => navigate("/historyVideos")}
+            >
               <i className="fa-solid fa-clock-rotate-left videolib-drawer-icon"></i>
               History
             </li>

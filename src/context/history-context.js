@@ -36,6 +36,19 @@ const HistoryProvider = ({ children }) => {
     }
   };
 
+  const clearFullHistory = async (token) => {
+    try {
+      const response = await axios.delete("/api/user/history/all", {
+        headers: {
+          authorization: token,
+        },
+      });
+      setHistoryVideos(response.data.history);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <HistoryContext.Provider
       value={{
@@ -43,6 +56,7 @@ const HistoryProvider = ({ children }) => {
         setHistoryVideos,
         addToHistory,
         removeFromHistory,
+        clearFullHistory,
       }}
     >
       {children}

@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, HorizontalCard, Sidebar, LargeHorizontalCard} from "../../components/index";
+import { Navbar, Sidebar, LargeHorizontalCard} from "../../components/index";
 import {useLikedVideos} from "../../context/likedVideos-context";
 import "./likedVideos.css";
 
