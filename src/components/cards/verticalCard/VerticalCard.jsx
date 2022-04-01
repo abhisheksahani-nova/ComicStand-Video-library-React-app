@@ -20,11 +20,16 @@ function VerticalCard({ video }) {
   const { addToHistory } = useHistoryVideos();
   const { playlists } = usePlaylists();
   const [showPlaylistDropdown, setShowPlaylistDropdown] = useState(false);
-  const [openModal, setOpenModal] = useState(false);
+  const [showPlaylistInput, setShowPlaylistInput] = useState(false);
   const [playListInfo, setPlaylistInfo] = useState({
     title: "",
     description: "",
   });
+
+  function handleClosePlaylistDropdown() {
+    setShowPlaylistDropdown((prev) => !prev);
+    setShowPlaylistInput(false);
+  }
 
   return (
     <div>
@@ -53,6 +58,14 @@ function VerticalCard({ video }) {
 
           {showPlaylistDropdown ? (
             <ul class="stacked-list list-style-none playlist-stacklist">
+              <li class="d-flex li-item playlist-li-item j-space-between">
+                <h5>Save to </h5>
+                <i
+                  class="fa-solid fa-rectangle-xmark"
+                  onClick={() => handleClosePlaylistDropdown()}
+                ></i>
+              </li>
+
               {playlists.map((playlist) => {
                 return (
                   <li
@@ -64,46 +77,64 @@ function VerticalCard({ video }) {
                 );
               })}
 
-              <li class="d-flex li-item playlist-li-item" onClick={() => setOpenModal(prev => !prev)}>
-                <i class="fa-solid fa-plus"></i>
-                <h5>Create New Playlist</h5>
-              </li>
-            </ul>
-          ) : (
-            ""
-          )}
+              {!showPlaylistInput ? (
+                <li
+                  class="d-flex li-item playlist-li-item"
+                  onClick={() => setShowPlaylistInput(true)}
+                >
+                  <i class="fa-solid fa-plus"></i>
+                  <h5>Create New Playlist</h5>
+                </li>
+              ) : (
+                ""
+              )}
 
-          {openModal ? (
-            <div class="modal playlist-modal">
-              <div class="mb-1">
-                <h2>Lorem ipsum</h2>
-              </div>
-              <div class="mb-1">
-                <input
-                  type="text"
-                  placeholder="Title"
-                  value={playListInfo.title}
-                  onChange={(e) =>
-                    setPlaylistInfo({ ...playListInfo, title: e.target.value })
-                  }
-                />
-                <input
-                  type="text"
-                  placeholder="Description"
-                  value={playListInfo.description}
-                  onChange={(e) =>
-                    setPlaylistInfo({
-                      ...playListInfo,
-                      description: e.target.value,
-                    })
-                  }
-                />
-              </div>
-              <div class="modal-footer d-flex mb-1">
-                <button class="btn btn-secondary">Create Playlist!</button>
-              </div>
-              <i class="fa-solid fa-xmark dismiss-card"></i>
-            </div>
+              {showPlaylistInput ? (
+                <li class="d-flex li-item playlist-li-item">
+                  <input
+                    type="text"
+                    placeholder="title"
+                    className="playlist-dropdown-inp"
+                    value={playListInfo.title}
+                    onChange={(e) =>
+                      setPlaylistInfo({
+                        ...playListInfo,
+                        title: e.target.value,
+                      })
+                    }
+                  />
+                </li>
+              ) : (
+                ""
+              )}
+
+              {showPlaylistInput ? (
+                <li class="d-flex li-item playlist-li-item">
+                  <input
+                    type="text"
+                    placeholder="description"
+                    className="playlist-dropdown-inp"
+                    value={playListInfo.description}
+                    onChange={(e) =>
+                      setPlaylistInfo({
+                        ...playListInfo,
+                        description: e.target.value,
+                      })
+                    }
+                  />
+                </li>
+              ) : (
+                ""
+              )}
+
+              {showPlaylistInput ? (
+                <li class="d-flex li-item playlist-li-item">
+                  <button className="btn">Create</button>
+                </li>
+              ) : (
+                ""
+              )}
+            </ul>
           ) : (
             ""
           )}

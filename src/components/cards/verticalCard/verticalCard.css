@@ -51,15 +51,12 @@
   color: white;
 }
 
-.playlist-li-item{
+.playlist-li-item {
   padding-left: 8px;
 }
 
-/* Modal style */
-
-.playlist-modal{
-  position: absolute;
-  background-color: blue;
-  z-index: 2;
-
+.playlist-dropdown-inp {
+  padding: 0.4rem;
+  border-radius: 3px;
+  border: none;
 }
