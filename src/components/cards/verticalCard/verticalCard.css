@@ -10,27 +10,56 @@
   position: absolute;
 }
 
-.verticalCard-like-icon-position {
+.verticalCard-like-icon {
   bottom: 1rem;
   right: 3rem;
 }
 
-.verticalCard-dislike-icon-position {
+.verticalCard-dislike-icon {
   bottom: 1rem;
   right: 1rem;
 }
 
-.verticalCard-watchLater-icon-position {
+.verticalCard-watchLater-icon {
   top: 0.5rem;
   right: 0.5rem;
-  color: var(--custom-pri-clr);
+  color: var(--light-bg-clr);
 }
 
 .verticalCard-watchLater-icon-select-clr {
   color: var(--dark-primary-clr);
 }
 
-.verticalCard-play-icon-position {
+.verticalCard-play-icon {
   top: 0;
   right: 0.5rem;
+}
+
+.verticalCard-playlist-icon {
+  top: 2rem;
+  right: 0.3rem;
+  color: var(--light-bg-clr);
+}
+
+.playlist-stacklist {
+  top: 3rem;
+  right: 0.1rem;
+  width: fit-content;
+  position: absolute;
+  z-index: 2;
+  background-color: var(--custom-dark-clr);
+  color: white;
+}
+
+.playlist-li-item{
+  padding-left: 8px;
+}
+
+/* Modal style */
+
+.playlist-modal{
+  position: absolute;
+  background-color: blue;
+  z-index: 2;
+
 }

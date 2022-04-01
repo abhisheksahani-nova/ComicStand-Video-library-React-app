@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "./verticalCard.css";
 import { useWatchLater } from "../../../context/watchLater-context";
 import { useLikedVideos } from "../../../context/likedVideos-context";
 import { useHistoryVideos } from "../../../context/history-context";
+import { usePlaylists } from "../../../context/playlist-context";
 
 function VerticalCard({ video }) {
   const { _id, title, channelName, img, views, year } = video;
@@ -17,6 +18,13 @@ function VerticalCard({ video }) {
     useLikedVideos();
 
   const { addToHistory } = useHistoryVideos();
+  const { playlists } = usePlaylists();
+  const [showPlaylistDropdown, setShowPlaylistDropdown] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
+  const [playListInfo, setPlaylistInfo] = useState({
+    title: "",
+    description: "",
+  });
 
   return (
     <div>
@@ -28,14 +36,76 @@ function VerticalCard({ video }) {
           />
           {watchLaterVideos.find((item) => item._id === _id) ? (
             <i
-              className="fa-solid fa-clock position-abs verticalCard-watchLater-icon-position verticalCard-watchLater-icon-select-clr"
+              className="fa-solid fa-clock position-abs verticalCard-watchLater-icon verticalCard-watchLater-icon-select-clr"
               onClick={() => handleRemoveFromWatchLater(_id, token)}
             ></i>
           ) : (
             <i
-              className="fa-solid fa-clock position-abs verticalCard-watchLater-icon-position"
+              className="fa-solid fa-clock position-abs verticalCard-watchLater-icon"
               onClick={() => handleAddToWatchLater(video, token)}
             ></i>
+          )}
+
+          <i
+            onClick={() => setShowPlaylistDropdown((prev) => !prev)}
+            class="fa-solid fa-file-circle-plus position-abs verticalCard-playlist-icon"
+          ></i>
+
+          {showPlaylistDropdown ? (
+            <ul class="stacked-list list-style-none playlist-stacklist">
+              {playlists.map((playlist) => {
+                return (
+                  <li
+                    key={playlist._id}
+                    class="d-flex li-item playlist-li-item"
+                  >
+                    <h5>{playlist.title}</h5>
+                  </li>
+                );
+              })}
+
+              <li class="d-flex li-item playlist-li-item" onClick={() => setOpenModal(prev => !prev)}>
+                <i class="fa-solid fa-plus"></i>
+                <h5>Create New Playlist</h5>
+              </li>
+            </ul>
+          ) : (
+            ""
+          )}
+
+          {openModal ? (
+            <div class="modal playlist-modal">
+              <div class="mb-1">
+                <h2>Lorem ipsum</h2>
+              </div>
+              <div class="mb-1">
+                <input
+                  type="text"
+                  placeholder="Title"
+                  value={playListInfo.title}
+                  onChange={(e) =>
+                    setPlaylistInfo({ ...playListInfo, title: e.target.value })
+                  }
+                />
+                <input
+                  type="text"
+                  placeholder="Description"
+                  value={playListInfo.description}
+                  onChange={(e) =>
+                    setPlaylistInfo({
+                      ...playListInfo,
+                      description: e.target.value,
+                    })
+                  }
+                />
+              </div>
+              <div class="modal-footer d-flex mb-1">
+                <button class="btn btn-secondary">Create Playlist!</button>
+              </div>
+              <i class="fa-solid fa-xmark dismiss-card"></i>
+            </div>
+          ) : (
+            ""
           )}
 
           <div className="badge-container">
@@ -44,7 +114,7 @@ function VerticalCard({ video }) {
             </h4>
             <i
               onClick={() => addToHistory(video, token)}
-              class="fa-solid fa-circle-play position-abs verticalCard-play-icon-position"
+              class="fa-solid fa-circle-play position-abs verticalCard-play-icon"
             ></i>
 
             <div className="d-flex flex-d-col">
@@ -58,15 +128,15 @@ function VerticalCard({ video }) {
             {likedVideos.find((item) => item._id == _id) ? (
               <i
                 onClick={() => removeFromLikedVideos(_id, token)}
-                className="fa-solid fa-thumbs-up position-abs verticalCard-like-icon-position"
+                className="fa-solid fa-thumbs-up position-abs verticalCard-like-icon"
               ></i>
             ) : (
               <i
                 onClick={() => addToLikedVideos(video, token)}
-                className="fa-solid fa-thumbs-up position-abs verticalCard-like-icon-position"
+                className="fa-solid fa-thumbs-up position-abs verticalCard-like-icon"
               ></i>
             )}
-            <i className="fa-solid fa-thumbs-down position-abs verticalCard-dislike-icon-position"></i>
+            <i className="fa-solid fa-thumbs-down position-abs verticalCard-dislike-icon"></i>
           </div>
         </div>
       </div>

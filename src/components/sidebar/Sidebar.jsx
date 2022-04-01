@@ -20,7 +20,10 @@ function Sidebar() {
               <i className="fa-brands fa-safari videolib-drawer-icon"></i>{" "}
               Explore
             </li>
-            <li className="videolib-list-item">
+            <li
+              className="videolib-list-item"
+              onClick={() => navigate("/playlists")}
+            >
               <i className="fa-brands fa-google-play videolib-drawer-icon"></i>
               Playlist
             </li>
