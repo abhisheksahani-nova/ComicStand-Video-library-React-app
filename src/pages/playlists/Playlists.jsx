@@ -17,8 +17,8 @@ function Playlists() {
               <div className="card-basic">
                 <div className="badge-container">
                   <div>
-                    <h3 className="card-heading">Our Changing Planet</h3>
-                    <small className="card-subHeading">by Kurt Wagner</small>
+                    <h3 className="card-heading">{playlist.title}</h3>
+                    <small className="card-subHeading">{playlist.videos.length}</small>
                   </div>
                   <i class="fa-solid fa-trash-can cart_card_closeicon"></i>
                 </div>

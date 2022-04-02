@@ -4,6 +4,7 @@ import { useWatchLater } from "../../../context/watchLater-context";
 import { useLikedVideos } from "../../../context/likedVideos-context";
 import { useHistoryVideos } from "../../../context/history-context";
 import { usePlaylists } from "../../../context/playlist-context";
+import { PlaylistDropdown } from "../../index";
 
 function VerticalCard({ video }) {
   const { _id, title, channelName, img, views, year } = video;
@@ -18,21 +19,13 @@ function VerticalCard({ video }) {
     useLikedVideos();
 
   const { addToHistory } = useHistoryVideos();
-  const { playlists } = usePlaylists();
+  const { playlists, createNewPlaylist, addNewVideoToPlaylist } =
+    usePlaylists();
   const [showPlaylistDropdown, setShowPlaylistDropdown] = useState(false);
-  const [showPlaylistInput, setShowPlaylistInput] = useState(false);
-  const [playListInfo, setPlaylistInfo] = useState({
-    title: "",
-    description: "",
-  });
-
-  function handleClosePlaylistDropdown() {
-    setShowPlaylistDropdown((prev) => !prev);
-    setShowPlaylistInput(false);
-  }
 
   return (
     <div>
+      {console.log(playlists)}
       <div className="videolib-verticalcard-resize">
         <div className="badge-container">
           <img
@@ -57,84 +50,10 @@ function VerticalCard({ video }) {
           ></i>
 
           {showPlaylistDropdown ? (
-            <ul class="stacked-list list-style-none playlist-stacklist">
-              <li class="d-flex li-item playlist-li-item j-space-between">
-                <h5>Save to </h5>
-                <i
-                  class="fa-solid fa-rectangle-xmark"
-                  onClick={() => handleClosePlaylistDropdown()}
-                ></i>
-              </li>
-
-              {playlists.map((playlist) => {
-                return (
-                  <li
-                    key={playlist._id}
-                    class="d-flex li-item playlist-li-item"
-                  >
-                    <h5>{playlist.title}</h5>
-                  </li>
-                );
-              })}
-
-              {!showPlaylistInput ? (
-                <li
-                  class="d-flex li-item playlist-li-item"
-                  onClick={() => setShowPlaylistInput(true)}
-                >
-                  <i class="fa-solid fa-plus"></i>
-                  <h5>Create New Playlist</h5>
-                </li>
-              ) : (
-                ""
-              )}
-
-              {showPlaylistInput ? (
-                <li class="d-flex li-item playlist-li-item">
-                  <input
-                    type="text"
-                    placeholder="title"
-                    className="playlist-dropdown-inp"
-                    value={playListInfo.title}
-                    onChange={(e) =>
-                      setPlaylistInfo({
-                        ...playListInfo,
-                        title: e.target.value,
-                      })
-                    }
-                  />
-                </li>
-              ) : (
-                ""
-              )}
-
-              {showPlaylistInput ? (
-                <li class="d-flex li-item playlist-li-item">
-                  <input
-                    type="text"
-                    placeholder="description"
-                    className="playlist-dropdown-inp"
-                    value={playListInfo.description}
-                    onChange={(e) =>
-                      setPlaylistInfo({
-                        ...playListInfo,
-                        description: e.target.value,
-                      })
-                    }
-                  />
-                </li>
-              ) : (
-                ""
-              )}
-
-              {showPlaylistInput ? (
-                <li class="d-flex li-item playlist-li-item">
-                  <button className="btn">Create</button>
-                </li>
-              ) : (
-                ""
-              )}
-            </ul>
+            <PlaylistDropdown
+              setShowPlaylistDropdown={setShowPlaylistDropdown}
+              video={video}
+            />
           ) : (
             ""
           )}

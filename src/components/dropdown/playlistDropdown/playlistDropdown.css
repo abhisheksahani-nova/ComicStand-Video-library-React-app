@@ -1,0 +1,23 @@
+.playlist-stacklist {
+  /* top: 3rem;
+    right: 0.1rem; */
+  width: fit-content;
+  /* position: absolute; */
+  z-index: 2;
+  background-color: var(--custom-dark-clr);
+  color: white;
+  display: grid;
+  position: fixed;
+  top: 10rem;
+  right: 35rem;
+}
+
+.playlist-li-item {
+  padding-left: 8px;
+}
+
+.playlist-dropdown-inp {
+  padding: 0.4rem;
+  border-radius: 3px;
+  border: none;
+}

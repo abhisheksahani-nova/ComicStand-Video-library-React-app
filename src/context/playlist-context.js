@@ -6,7 +6,7 @@ const PlaylistsContext = createContext();
 const PlaylistsProvider = ({ children }) => {
   const [playlists, setPlaylists] = useState([]);
 
-  const createNewPlaylist = async (token, playlist) => {
+  const createNewPlaylist = async (playlist, token) => {
     try {
       const response = await axios.post(
         "/api/user/playlists",
@@ -23,10 +23,10 @@ const PlaylistsProvider = ({ children }) => {
     }
   };
 
-  const addNewVideoToPlaylist = async (token, video) => {
+  const addNewVideoToPlaylist = async (video, playlistId, token) => {
     try {
       const response = await axios.post(
-        "/api/user/playlists",
+        `/api/user/playlists/${playlistId}`,
         { video },
         {
           headers: {
@@ -34,7 +34,8 @@ const PlaylistsProvider = ({ children }) => {
           },
         }
       );
-      setPlaylists(response.data.playlists);
+      // setPlaylists(response.data.playlists);
+      console.log(response.data.playlist);
     } catch (error) {
       console.log(error);
     }
