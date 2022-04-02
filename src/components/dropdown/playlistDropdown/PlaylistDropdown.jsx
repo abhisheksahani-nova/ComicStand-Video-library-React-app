@@ -10,7 +10,7 @@ function PlaylistDropdown({ setShowPlaylistDropdown, video }) {
     description: "",
   });
 
-  const { playlists, createNewPlaylist, addNewVideoToPlaylist } =
+  const { playlists, createNewPlaylist, addNewVideoToPlaylist, getPlaylists } =
     usePlaylists();
 
   const token = localStorage.getItem("token");
@@ -23,6 +23,11 @@ function PlaylistDropdown({ setShowPlaylistDropdown, video }) {
   function handleCreateNewPlaylist() {
     createNewPlaylist(playListInfo, token);
     setShowPlaylistDropdown(false);
+  }
+
+  function handleAddNewVideoToPlaylist(video, playlistId, token) {
+    addNewVideoToPlaylist(video, playlistId, token);
+    getPlaylists(token);
   }
 
   return (
@@ -40,7 +45,9 @@ function PlaylistDropdown({ setShowPlaylistDropdown, video }) {
           <li
             key={playlist._id}
             class="d-flex li-item playlist-li-item"
-            onClick={() => addNewVideoToPlaylist(video, playlist._id, token)}
+            onClick={() =>
+              handleAddNewVideoToPlaylist(video, playlist._id, token)
+            }
           >
             <h5>{playlist.title}</h5>
           </li>

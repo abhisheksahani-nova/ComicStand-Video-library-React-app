@@ -3,7 +3,6 @@ import "./verticalCard.css";
 import { useWatchLater } from "../../../context/watchLater-context";
 import { useLikedVideos } from "../../../context/likedVideos-context";
 import { useHistoryVideos } from "../../../context/history-context";
-import { usePlaylists } from "../../../context/playlist-context";
 import { PlaylistDropdown } from "../../index";
 
 function VerticalCard({ video }) {
@@ -19,13 +18,10 @@ function VerticalCard({ video }) {
     useLikedVideos();
 
   const { addToHistory } = useHistoryVideos();
-  const { playlists, createNewPlaylist, addNewVideoToPlaylist } =
-    usePlaylists();
   const [showPlaylistDropdown, setShowPlaylistDropdown] = useState(false);
 
   return (
     <div>
-      {console.log(playlists)}
       <div className="videolib-verticalcard-resize">
         <div className="badge-container">
           <img

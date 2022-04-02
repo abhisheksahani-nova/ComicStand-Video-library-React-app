@@ -8,6 +8,7 @@ import {
   LikedVideos,
   HistoryVideos,
   Playlists,
+  Playlist
 } from "./pages/index";
 import { Routes, Route } from "react-router-dom";
 import Mockman from "mockman-js";
@@ -24,6 +25,7 @@ function App() {
         <Route path="/likedVideos" element={<LikedVideos />}></Route>
         <Route path="/historyVideos" element={<HistoryVideos />}></Route>
         <Route path="/playlists" element={<Playlists />}></Route>
+        <Route path="/playlists/:playlistId" element={<Playlist />}></Route>
         <Route path="/mock" element={<Mockman />}></Route>
       </Routes>
     </div>

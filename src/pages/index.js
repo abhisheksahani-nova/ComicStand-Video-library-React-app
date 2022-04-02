@@ -6,6 +6,7 @@ import Signup from "./authentication-pages/signup/Signup.jsx";
 import LikedVideos from "./likedVideos/LikedVideos";
 import HistoryVideos from "./history/History";
 import Playlists from "./playlists/Playlists";
+import Playlist from "./playlists/playlist/Playlist";
 
 export {
   Homepage,
@@ -16,4 +17,5 @@ export {
   LikedVideos,
   HistoryVideos,
   Playlists,
+  Playlist,
 };

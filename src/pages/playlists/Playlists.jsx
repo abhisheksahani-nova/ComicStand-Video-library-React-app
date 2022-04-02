@@ -1,9 +1,13 @@
 import React from "react";
 import { Navbar, Sidebar } from "../../components/index";
 import { usePlaylists } from "../../context/playlist-context";
+import { useNavigate } from "react-router-dom";
+import "./playlists.css";
 
 function Playlists() {
-  const { playlists } = usePlaylists();
+  const { playlists, deletePlaylist, getPlaylists } = usePlaylists();
+  const token = localStorage.getItem("token");
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -14,17 +18,28 @@ function Playlists() {
         <div className="videolib-homepage-videos-cont">
           {playlists.map((playlist) => {
             return (
-              <div className="card-basic">
+              <div key={playlist._id} className="card-basic playlist-card">
                 <div className="badge-container">
                   <div>
                     <h3 className="card-heading">{playlist.title}</h3>
-                    <small className="card-subHeading">{playlist.videos.length}</small>
+                    <small className="card-subHeading">
+                      {playlist.videos.length}
+                    </small>
                   </div>
-                  <i class="fa-solid fa-trash-can cart_card_closeicon"></i>
+
+                  <i
+                    className="fa-solid fa-trash-can cart_card_closeicon"
+                    onClick={() => deletePlaylist(playlist._id, token)}
+                  ></i>
                 </div>
 
                 <div className="card-footer">
-                  <button className="btn btn-ecommerce">View Playlist</button>
+                  <button
+                    className="btn btn-ecommerce"
+                    onClick={() => navigate(`/playlists/${playlist._id}`)}
+                  >
+                    View Playlist
+                  </button>
                 </div>
               </div>
             );

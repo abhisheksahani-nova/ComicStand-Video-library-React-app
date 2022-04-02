@@ -2,16 +2,23 @@ import React from "react";
 import "./largeHorizontalCard.css";
 import { useLikedVideos } from "../../../context/likedVideos-context";
 import { useHistoryVideos } from "../../../context/history-context";
+import { usePlaylists } from "../../../context/playlist-context";
 import { useLocation } from "react-router-dom";
 
-function LargeHorizontalCard({ video }) {
+function LargeHorizontalCard({ video, playlistId }) {
   const { _id, title, channelName, img, views, year, description } = video;
   const { removeFromHistory } = useHistoryVideos();
+  const { deleteVideoFromPlaylist, getPlaylists } = usePlaylists();
   const token = localStorage.getItem("token");
   let location = useLocation();
 
   // const { likedVideos, addToLikedVideos, removeFromLikedVideos } =
   //   useLikedVideos();
+
+  function handleDeleteVideoFromPlaylist(playlistId, id, token) {
+    deleteVideoFromPlaylist(playlistId, id, token);
+    getPlaylists(token);
+  }
 
   return (
     <div>
@@ -29,7 +36,12 @@ function LargeHorizontalCard({ video }) {
               onClick={() => removeFromHistory(_id, token)}
             ></i>
           ) : (
-            ""
+            <i
+              class="fa-solid fa-trash-can cart_card_closeicon"
+              onClick={() =>
+                handleDeleteVideoFromPlaylist(playlistId, _id, token)
+              }
+            ></i>
           )}
 
           <div className="">
