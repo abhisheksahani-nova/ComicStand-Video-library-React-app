@@ -13,16 +13,10 @@ function LikedVideos() {
         <Sidebar />
 
         <div className="right-side-container">
-          <h2 className="t-align-center mb-2">
-            Liked Videos ({likedVideos.length})
-          </h2>
-
-          <div className="likedVideos-outer-cont">
-            <div className="d-flex likedVideos-video-cont">
-              {likedVideos.map((video) => {
-                return <LargeHorizontalCard key={video._id} video={video} />;
-              })}
-            </div>
+          <div className="d-flex likedVideos-video-cont">
+            {likedVideos.map((video) => {
+              return <LargeHorizontalCard key={video._id} video={video} />;
+            })}
           </div>
         </div>
       </section>

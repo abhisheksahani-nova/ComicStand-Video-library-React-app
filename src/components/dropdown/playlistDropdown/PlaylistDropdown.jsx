@@ -112,7 +112,7 @@ function PlaylistDropdown({
 
       {showPlaylistInput ? (
         <li className="d-flex li-item playlist-li-item">
-          <button className="btn" onClick={() => handleCreateNewPlaylist()}>
+          <button className="btn pri-cta-bg-clr" onClick={() => handleCreateNewPlaylist()}>
             Create
           </button>
         </li>

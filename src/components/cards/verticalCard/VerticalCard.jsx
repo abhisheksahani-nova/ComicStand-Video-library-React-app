@@ -28,7 +28,8 @@ function VerticalCard({ video }) {
             className="card-img videolib-verticalcard-img-resize"
             src={img}
           />
-          {watchLaterVideos.find((item) => item._id === _id) ? (
+          
+          {watchLaterVideos?.find((item) => item._id === _id) ? (
             <i
               className="fa-solid fa-clock position-abs verticalCard-watchLater-icon verticalCard-watchLater-icon-select-clr"
               onClick={() => handleRemoveFromWatchLater(_id, token)}
