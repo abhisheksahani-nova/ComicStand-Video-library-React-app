@@ -12,8 +12,8 @@ function LargeHorizontalCard({ video, playlistId }) {
   const token = localStorage.getItem("token");
   let location = useLocation();
 
-  // const { likedVideos, addToLikedVideos, removeFromLikedVideos } =
-  //   useLikedVideos();
+  const { likedVideos, addToLikedVideos, removeFromLikedVideos } =
+    useLikedVideos();
 
   function handleDeleteVideoFromPlaylist(playlistId, id, token) {
     deleteVideoFromPlaylist(playlistId, id, token);
@@ -32,12 +32,17 @@ function LargeHorizontalCard({ video, playlistId }) {
 
           {location.pathname == "/historyVideos" ? (
             <i
-              class="fa-solid fa-trash-can cart_card_closeicon"
+              className="fa-solid fa-trash-can cart_card_closeicon"
               onClick={() => removeFromHistory(_id, token)}
+            ></i>
+          ) : location.pathname == "/likedVideos" ? (
+            <i
+              className="fa-solid fa-trash-can cart_card_closeicon"
+              onClick={() => removeFromLikedVideos(_id, token)}
             ></i>
           ) : (
             <i
-              class="fa-solid fa-trash-can cart_card_closeicon"
+              className="fa-solid fa-trash-can cart_card_closeicon"
               onClick={() =>
                 handleDeleteVideoFromPlaylist(playlistId, _id, token)
               }

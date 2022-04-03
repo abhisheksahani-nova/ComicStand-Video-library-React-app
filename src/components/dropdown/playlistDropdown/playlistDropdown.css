@@ -1,8 +1,5 @@
 .playlist-stacklist {
-  /* top: 3rem;
-    right: 0.1rem; */
   width: fit-content;
-  /* position: absolute; */
   z-index: 2;
   background-color: var(--custom-dark-clr);
   color: white;
@@ -20,4 +17,8 @@
   padding: 0.4rem;
   border-radius: 3px;
   border: none;
+}
+
+.cursor-p {
+  cursor: pointer;
 }

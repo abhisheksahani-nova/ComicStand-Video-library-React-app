@@ -17,7 +17,7 @@ function HistoryVideos() {
           {historyVideos.length > 0 ? (
             <div className="d-flex j-space-between mb-2">
               <h1>History</h1>
-              <button className="btn" onClick={() => clearFullHistory(token)}>
+              <button className="btn pri-cta-bg-clr" onClick={() => clearFullHistory(token)}>
                 Clear Full History
               </button>
             </div>

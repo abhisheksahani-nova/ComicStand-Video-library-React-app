@@ -90,7 +90,7 @@ function Login() {
 
         <div className="inp-container ml-1 mb-1">
           <button
-            className="btn cta-btn login_custom_btn"
+            className="btn login_custom_btn pri-cta-bg-clr"
             type="button"
             onClick={() => handleUserLogin()}
           >

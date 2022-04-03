@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import "./playlistDropdown.css";
 import { usePlaylists } from "../../../context/playlist-context";
 
-function PlaylistDropdown({ setShowPlaylistDropdown, video }) {
+function PlaylistDropdown({
+  setShowPlaylistDropdown,
+  video,
+  hideSaveToPlaylist,
+}) {
   const [showPlaylistInput, setShowPlaylistInput] = useState(false);
 
   const [playListInfo, setPlaylistInfo] = useState({
@@ -28,38 +32,40 @@ function PlaylistDropdown({ setShowPlaylistDropdown, video }) {
   function handleAddNewVideoToPlaylist(video, playlistId, token) {
     addNewVideoToPlaylist(video, playlistId, token);
     getPlaylists(token);
+    setShowPlaylistDropdown((prev) => !prev);
   }
 
   return (
-    <ul class="stacked-list list-style-none playlist-stacklist">
-      <li class="d-flex li-item playlist-li-item j-space-between">
-        <h5>Save to </h5>
+    <ul className="stacked-list list-style-none playlist-stacklist">
+      <li className="d-flex li-item playlist-li-item j-space-between">
+        {!hideSaveToPlaylist ? <h5>Save to </h5> : <h5>Add</h5>}
         <i
-          class="fa-solid fa-rectangle-xmark"
+          className="fa-solid fa-rectangle-xmark cursor-p"
           onClick={() => handleClosePlaylistDropdown()}
         ></i>
       </li>
 
-      {playlists?.map((playlist) => {
-        return (
-          <li
-            key={playlist._id}
-            class="d-flex li-item playlist-li-item"
-            onClick={() =>
-              handleAddNewVideoToPlaylist(video, playlist._id, token)
-            }
-          >
-            <h5>{playlist.title}</h5>
-          </li>
-        );
-      })}
+      {!hideSaveToPlaylist &&
+        playlists?.map((playlist) => {
+          return (
+            <li
+              key={playlist._id}
+              className="d-flex li-item playlist-li-item cursor-p"
+              onClick={() =>
+                handleAddNewVideoToPlaylist(video, playlist._id, token)
+              }
+            >
+              <h5>{playlist.title}</h5>
+            </li>
+          );
+        })}
 
       {!showPlaylistInput ? (
         <li
-          class="d-flex li-item playlist-li-item"
+          className="d-flex li-item playlist-li-item cursor-p"
           onClick={() => setShowPlaylistInput(true)}
         >
-          <i class="fa-solid fa-plus"></i>
+          <i className="fa-solid fa-plus"></i>
           <h5>Create New Playlist</h5>
         </li>
       ) : (
@@ -67,7 +73,7 @@ function PlaylistDropdown({ setShowPlaylistDropdown, video }) {
       )}
 
       {showPlaylistInput ? (
-        <li class="d-flex li-item playlist-li-item">
+        <li className="d-flex li-item playlist-li-item">
           <input
             type="text"
             placeholder="title"
@@ -86,7 +92,7 @@ function PlaylistDropdown({ setShowPlaylistDropdown, video }) {
       )}
 
       {showPlaylistInput ? (
-        <li class="d-flex li-item playlist-li-item">
+        <li className="d-flex li-item playlist-li-item">
           <input
             type="text"
             placeholder="description"
@@ -105,7 +111,7 @@ function PlaylistDropdown({ setShowPlaylistDropdown, video }) {
       )}
 
       {showPlaylistInput ? (
-        <li class="d-flex li-item playlist-li-item">
+        <li className="d-flex li-item playlist-li-item">
           <button className="btn" onClick={() => handleCreateNewPlaylist()}>
             Create
           </button>

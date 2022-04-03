@@ -36,7 +36,6 @@ function Signup() {
 
   return (
     <>
-      <Navbar />
       <section className="login_form_container d-flex">
         <div className="card-basic login_form">
           <h2 className="t-align-center mt-2 mb-2">Signup</h2>
@@ -160,7 +159,7 @@ function Signup() {
 
           <div className="inp-container ml-1 mb-1">
             <button
-              className="btn cta-btn login_custom_btn"
+              className="btn login_custom_btn pri-cta-bg-clr"
               type="button"
               onClick={() => handleSignup()}
             >

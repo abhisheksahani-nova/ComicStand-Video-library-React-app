@@ -42,13 +42,14 @@ function VerticalCard({ video }) {
 
           <i
             onClick={() => setShowPlaylistDropdown((prev) => !prev)}
-            class="fa-solid fa-file-circle-plus position-abs verticalCard-playlist-icon"
+            className="fa-solid fa-file-circle-plus position-abs verticalCard-playlist-icon"
           ></i>
 
           {showPlaylistDropdown ? (
             <PlaylistDropdown
               setShowPlaylistDropdown={setShowPlaylistDropdown}
               video={video}
+              hideSaveToPlaylist={false}
             />
           ) : (
             ""
@@ -60,7 +61,7 @@ function VerticalCard({ video }) {
             </h4>
             <i
               onClick={() => addToHistory(video, token)}
-              class="fa-solid fa-circle-play position-abs verticalCard-play-icon"
+              className="fa-solid fa-circle-play position-abs verticalCard-play-icon"
             ></i>
 
             <div className="d-flex flex-d-col">

@@ -25,7 +25,7 @@ function Sidebar() {
               onClick={() => navigate("/playlists")}
             >
               <i className="fa-brands fa-google-play videolib-drawer-icon"></i>
-              Playlist
+              Playlists
             </li>
           </ul>
         </div>

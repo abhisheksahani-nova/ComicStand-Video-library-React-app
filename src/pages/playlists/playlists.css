@@ -1,4 +1,13 @@
-.playlist-card{
-    min-width: 15rem;
-    width: fit-content;
+.playlist-card {
+  min-width: 15rem;
+  width: fit-content;
+}
+
+.right-side-container {
+  width: 100%;
+  padding: 2rem;
+}
+
+.pri-cta-bg-clr{
+  background-color: var(--custom-sec-clr);
 }
