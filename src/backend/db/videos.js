@@ -86,7 +86,7 @@ export const videos = [
     year: 2,
     views: "2.7M",
     genre: "Observational Comedy",
-    nationality: "US",
+    nationality: "Indian",
     popularity: "International",
   },
   {

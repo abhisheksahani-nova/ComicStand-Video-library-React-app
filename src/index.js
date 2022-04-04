@@ -7,6 +7,8 @@ import { BrowserRouter } from "react-router-dom";
 import { VideosProvider } from "./context/videos-context";
 import { WatchLaterProvider } from "./context/watchLater-context";
 import { LikedVideosProvider } from "./context/likedVideos-context";
+import { HistoryProvider } from "./context/history-context";
+import { PlaylistsProvider } from "./context/playlist-context";
 
 // Call make Server
 makeServer();
@@ -16,9 +18,13 @@ ReactDOM.render(
     <BrowserRouter>
       <VideosProvider>
         <WatchLaterProvider>
-          <LikedVideosProvider>
-            <App />
-          </LikedVideosProvider>
+          <HistoryProvider>
+            <LikedVideosProvider>
+              <PlaylistsProvider>
+                <App />
+              </PlaylistsProvider>
+            </LikedVideosProvider>
+          </HistoryProvider>
         </WatchLaterProvider>
       </VideosProvider>
     </BrowserRouter>

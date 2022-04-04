@@ -4,5 +4,18 @@ import WatchLater from "./watchLaterPage/WatchLater";
 import Login from "./authentication-pages/login/Login.jsx";
 import Signup from "./authentication-pages/signup/Signup.jsx";
 import LikedVideos from "./likedVideos/LikedVideos";
+import HistoryVideos from "./history/History";
+import Playlists from "./playlists/Playlists";
+import Playlist from "./playlists/playlist/Playlist";
 
-export {Homepage, VideoListingPage, WatchLater, Login, Signup, LikedVideos};
+export {
+  Homepage,
+  VideoListingPage,
+  WatchLater,
+  Login,
+  Signup,
+  LikedVideos,
+  HistoryVideos,
+  Playlists,
+  Playlist,
+};

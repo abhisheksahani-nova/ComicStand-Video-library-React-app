@@ -1,10 +1,9 @@
 .likedVideos-video-cont{
     flex-direction: column;
     gap: 1.5rem;
-    align-items: center;
-    width: 100%;
 }
 
 .likedVideos-outer-cont{
-    margin: 2rem 0 0 4rem;
+    margin: 0rem 2rem 1rem;
+    width: 100%;
 }
