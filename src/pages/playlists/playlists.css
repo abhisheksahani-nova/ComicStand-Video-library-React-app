@@ -8,6 +8,10 @@
   padding: 2rem;
 }
 
-.pri-cta-bg-clr{
-  background-color: var(--custom-sec-clr);
+.pri-cta-bg-clr {
+  background-color: var(--gray-shade1);
+}
+
+.pri-cta-light-bg-clr{
+  background-color: var(--gray-shade3);
 }

@@ -25,7 +25,7 @@ function Playlist() {
           <div className="d-flex j-space-between mb-2">
             <h2>My Playlists</h2>
             <button
-              className="btn pri-cta-bg-clr"
+              className="btn pri-cta-light-bg-clr"
               onClick={() => deletePlaylist(playlistId, token)}
             >
               Delete this Playlist

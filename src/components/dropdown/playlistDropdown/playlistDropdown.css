@@ -15,8 +15,8 @@
 .playlist-stacklist {
   width: fit-content;
   z-index: 2;
-  background-color: var(--custom-dark-clr);
-  color: white;
+  background-color: var(--gray-shade3);
+  color: var(--light-clr);
   display: grid;
   position: fixed;
   top: 35%;
@@ -35,4 +35,16 @@
 
 .cursor-p {
   cursor: pointer;
+}
+
+.j-content-right {
+  justify-content: right;
+}
+
+.playlist-create-btn-resize {
+  padding: 0.5rem;
+}
+
+.playlist-add-icon {
+  margin-right: 5px;
 }

@@ -21,7 +21,7 @@ function Playlists() {
           <div className="d-flex j-space-between mb-2">
             <h2>My Playlists</h2>
             <button
-              className="btn pri-cta-bg-clr"
+              className="btn pri-cta-light-bg-clr"
               onClick={() => setShowPlaylistDropdown((prev) => !prev)}
             >
               Create New Playlist
@@ -58,7 +58,7 @@ function Playlists() {
 
                   <div className="card-footer">
                     <button
-                      className="btn btn-ecommerce"
+                      className="btn pri-cta-light-bg-clr"
                       onClick={() => navigate(`/playlists/${playlist._id}`)}
                     >
                       View Playlist

@@ -8,7 +8,7 @@ import { useLocation } from "react-router-dom";
 
 function LargeHorizontalCard({ video, playlistId }) {
   const { _id, title, channelName, img, views, year, description } = video;
-  const { removeFromHistory } = useHistoryVideos();
+  const { removeFromHistory, addToHistory } = useHistoryVideos();
   const { deleteVideoFromPlaylist, getPlaylists } = usePlaylists();
   const { handleRemoveFromWatchLater } = useWatchLater();
   const token = localStorage.getItem("token");

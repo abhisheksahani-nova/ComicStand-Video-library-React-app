@@ -159,7 +159,7 @@ function Signup() {
 
           <div className="inp-container ml-1 mb-1">
             <button
-              className="btn login_custom_btn pri-cta-bg-clr"
+              className="btn login_custom_btn pri-cta-light-bg-clr"
               type="button"
               onClick={() => handleSignup()}
             >

@@ -66,7 +66,7 @@ function PlaylistDropdown({
             className="d-flex li-item playlist-li-item cursor-p"
             onClick={() => setShowPlaylistInput(true)}
           >
-            <i className="fa-solid fa-plus"></i>
+            <i className="fa-solid fa-plus playlist-add-icon"></i>
             <h5>Create New Playlist</h5>
           </li>
         ) : (
@@ -112,9 +112,9 @@ function PlaylistDropdown({
         )}
 
         {showPlaylistInput ? (
-          <li className="d-flex li-item playlist-li-item">
+          <li className="d-flex li-item playlist-li-item j-content-right">
             <button
-              className="btn pri-cta-bg-clr"
+              className="btn pri-cta-bg-clr playlist-create-btn-resize"
               onClick={() => handleCreateNewPlaylist()}
             >
               Create
