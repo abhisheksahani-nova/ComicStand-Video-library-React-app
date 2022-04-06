@@ -30,14 +30,8 @@
   color: var(--dark-primary-clr);
 }
 
-.verticalCard-play-icon {
+.verticalCard-playlist-icon {
   top: 0;
   right: 0.5rem;
-}
-
-.verticalCard-playlist-icon {
-  top: 2rem;
-  right: 0.3rem;
-  color: var(--light-bg-clr);
 }
 
