@@ -22,10 +22,11 @@ function LargeHorizontalCard({ video, playlistId }) {
   }
 
   return (
-    <div onClick={() => addToHistory(video, token)}>
+    <div>
       <div className="Card-horizontalImage-textContainer videolib-hr-largecard-resize p-relative">
         <div className="Card-horizontalImage-text">
           <img
+            onClick={() => addToHistory(video, token)}
             className="card-img Card-horizontalImage-text-img  videolib-hr-largecard-imgresize"
             src={img}
             alt="plant image"

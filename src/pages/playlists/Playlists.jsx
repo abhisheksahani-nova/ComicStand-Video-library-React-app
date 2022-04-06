@@ -46,7 +46,7 @@ function Playlists() {
                     <div>
                       <h3 className="card-heading">{playlist.title}</h3>
                       <small className="card-subHeading">
-                        {playlist.videos.length}
+                        {playlist.videos.length} videos
                       </small>
                     </div>
 
@@ -58,7 +58,7 @@ function Playlists() {
 
                   <div className="card-footer">
                     <button
-                      className="btn pri-cta-light-bg-clr"
+                      className="btn btn-ecommerce pri-cta-light-bg-clr"
                       onClick={() => navigate(`/playlists/${playlist._id}`)}
                     >
                       View Playlist

@@ -21,10 +21,11 @@ function VerticalCard({ video }) {
   const [showPlaylistDropdown, setShowPlaylistDropdown] = useState(false);
 
   return (
-    <div onClick={() => addToHistory(video, token)}>
+    <div>
       <div className="videolib-verticalcard-resize">
         <div className="badge-container">
           <img
+            onClick={() => addToHistory(video, token)}
             className="card-img videolib-verticalcard-img-resize"
             src={img}
           />
