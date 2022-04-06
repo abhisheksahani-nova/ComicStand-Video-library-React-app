@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 function Sidebar() {
   const navigate = useNavigate();
+  const token = localStorage.getItem("token");
 
   return (
     <div>
@@ -22,7 +23,9 @@ function Sidebar() {
             </li>
             <li
               className="videolib-list-item"
-              onClick={() => navigate("/playlists")}
+              onClick={() =>
+                token ? navigate("/playlists") : navigate("/login")
+              }
             >
               <i className="fa-brands fa-google-play videolib-drawer-icon"></i>
               Playlists
@@ -34,21 +37,27 @@ function Sidebar() {
           <ul className="videolib-list">
             <li
               className="videolib-list-item"
-              onClick={() => navigate("/historyVideos")}
+              onClick={() =>
+                token ? navigate("/historyVideos") : navigate("/login")
+              }
             >
               <i className="fa-solid fa-clock-rotate-left videolib-drawer-icon"></i>
               History
             </li>
             <li
               className="videolib-list-item"
-              onClick={() => navigate("/watchLater")}
+              onClick={() =>
+                token ? navigate("/watchLater") : navigate("/login")
+              }
             >
               <i className="fa-solid fa-clock videolib-drawer-icon"></i> Watch
               later
             </li>
             <li
               className="videolib-list-item"
-              onClick={() => navigate("/likedVideos")}
+              onClick={() =>
+                token ? navigate("/likedVideos") : navigate("/login")
+              }
             >
               <i className="fa-solid fa-thumbs-up videolib-drawer-icon"></i>{" "}
               Liked videos

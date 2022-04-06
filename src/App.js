@@ -8,12 +8,17 @@ import {
   LikedVideos,
   HistoryVideos,
   Playlists,
-  Playlist
+  Playlist,
 } from "./pages/index";
 import { Routes, Route } from "react-router-dom";
 import Mockman from "mockman-js";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    localStorage.removeItem("token");
+  }, []);
+
   return (
     <div className="App">
       <Routes>
