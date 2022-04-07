@@ -29,4 +29,4 @@ Git clone the repository on your local system, then do npm install to install de
 
 ## Feedback
 
-If you have any feedback, please reach out to us at abhisheksahani653.com
+If you have any feedback, please reach out to us at abhisheksahani653@gmail.com
