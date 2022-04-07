@@ -28,6 +28,7 @@ function VerticalCard({ video }) {
             onClick={() => addToHistory(video, token)}
             className="card-img videolib-verticalcard-img-resize"
             src={img}
+            alt={title}
           />
 
           {watchLaterVideos?.find((item) => item._id === _id) ? (

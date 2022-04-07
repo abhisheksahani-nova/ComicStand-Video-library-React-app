@@ -29,7 +29,7 @@ function LargeHorizontalCard({ video, playlistId }) {
             onClick={() => addToHistory(video, token)}
             className="card-img Card-horizontalImage-text-img  videolib-hr-largecard-imgresize"
             src={img}
-            alt="plant image"
+            alt={title}
           />
 
           {location.pathname == "/historyVideos" ? (
