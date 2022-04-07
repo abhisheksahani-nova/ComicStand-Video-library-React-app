@@ -5,6 +5,7 @@
   border-bottom: 1px solid var(--custom-pri-clr);
   border-top: 1px solid var(--custom-pri-clr);
   margin: 1rem 1.6rem;
+  gap: 0.8rem;
 }
 
 .videolib-homepage-chip-custom-sty {

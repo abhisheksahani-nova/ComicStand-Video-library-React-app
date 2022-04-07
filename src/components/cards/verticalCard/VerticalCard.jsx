@@ -25,10 +25,12 @@ function VerticalCard({ video }) {
       <div className="videolib-verticalcard-resize">
         <div className="badge-container">
           <img
+            onClick={() => addToHistory(video, token)}
             className="card-img videolib-verticalcard-img-resize"
             src={img}
+            alt={title}
           />
-          
+
           {watchLaterVideos?.find((item) => item._id === _id) ? (
             <i
               className="fa-solid fa-clock position-abs verticalCard-watchLater-icon verticalCard-watchLater-icon-select-clr"
@@ -40,11 +42,6 @@ function VerticalCard({ video }) {
               onClick={() => handleAddToWatchLater(video, token)}
             ></i>
           )}
-
-          <i
-            onClick={() => setShowPlaylistDropdown((prev) => !prev)}
-            className="fa-solid fa-file-circle-plus position-abs verticalCard-playlist-icon"
-          ></i>
 
           {showPlaylistDropdown ? (
             <PlaylistDropdown
@@ -60,9 +57,10 @@ function VerticalCard({ video }) {
             <h4 className="card-heading videolib-cardheading-resize">
               {title}
             </h4>
+
             <i
-              onClick={() => addToHistory(video, token)}
-              className="fa-solid fa-circle-play position-abs verticalCard-play-icon"
+              onClick={() => setShowPlaylistDropdown((prev) => !prev)}
+              className="fa-solid fa-file-circle-plus position-abs verticalCard-playlist-icon"
             ></i>
 
             <div className="d-flex flex-d-col">

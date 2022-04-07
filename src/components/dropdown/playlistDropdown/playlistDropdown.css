@@ -1,12 +1,26 @@
+.playlist-dropdown-container {
+  display: block;
+  position: fixed;
+  width: fit-content;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
 .playlist-stacklist {
   width: fit-content;
   z-index: 2;
-  background-color: var(--custom-dark-clr);
-  color: white;
+  background-color: var(--gray-shade3);
+  color: var(--light-clr);
   display: grid;
   position: fixed;
-  top: 10rem;
-  right: 35rem;
+  top: 35%;
+  right: 45%;
 }
 
 .playlist-li-item {
@@ -21,4 +35,16 @@
 
 .cursor-p {
   cursor: pointer;
+}
+
+.j-content-right {
+  justify-content: right;
+}
+
+.playlist-create-btn-resize {
+  padding: 0.5rem;
+}
+
+.playlist-add-icon {
+  margin-right: 5px;
 }

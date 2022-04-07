@@ -1,8 +1,16 @@
 import React from "react";
 import "./navbar.css";
-import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
+  const token = localStorage.getItem("token");
+  const navigate = useNavigate();
+
+  function handleLogout() {
+    localStorage.removeItem("token");
+    navigate("/");
+  }
+
   return (
     <div>
       <nav className="nav-bar white mb-0">
@@ -21,17 +29,21 @@ function Navbar() {
         </div>
 
         <div className="nav-innerContainer nav-icon-container width-reset inherit-clr mr-1 videolib-nav-icon-cont-width-reset">
-          <div className="flex-col-center">
-            <NavLink to="signup" className="videolib-nav-icon-clr videolib-nav-user-icon">
-              <i className="fa-regular fa-user"></i>
-            </NavLink>
-          </div>
-
-          <div className="flex-col-center">
-            <NavLink to="/signup" className="videolib-nav-icon-clr nav-icon">
-              <i className="fa-regular fa-bell"></i>
-            </NavLink>
-          </div>
+          {token ? (
+            <button
+              className="btn pri-cta-light-bg-clr"
+              onClick={() => handleLogout()}
+            >
+              Logout
+            </button>
+          ) : (
+            <button
+              className="btn pri-cta-light-bg-clr"
+              onClick={() => navigate("/login")}
+            >
+              Login
+            </button>
+          )}
         </div>
       </nav>
     </div>

@@ -8,7 +8,7 @@ import { useLocation } from "react-router-dom";
 
 function LargeHorizontalCard({ video, playlistId }) {
   const { _id, title, channelName, img, views, year, description } = video;
-  const { removeFromHistory } = useHistoryVideos();
+  const { removeFromHistory, addToHistory } = useHistoryVideos();
   const { deleteVideoFromPlaylist, getPlaylists } = usePlaylists();
   const { handleRemoveFromWatchLater } = useWatchLater();
   const token = localStorage.getItem("token");
@@ -26,9 +26,10 @@ function LargeHorizontalCard({ video, playlistId }) {
       <div className="Card-horizontalImage-textContainer videolib-hr-largecard-resize p-relative">
         <div className="Card-horizontalImage-text">
           <img
+            onClick={() => addToHistory(video, token)}
             className="card-img Card-horizontalImage-text-img  videolib-hr-largecard-imgresize"
             src={img}
-            alt="plant image"
+            alt={title}
           />
 
           {location.pathname == "/historyVideos" ? (
