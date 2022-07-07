@@ -11,4 +11,5 @@
 
 .app {
   background-color: var(--comicstand-bg-clr);
+  min-height: 100vh;
 }

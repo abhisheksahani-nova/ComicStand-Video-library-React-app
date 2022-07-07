@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./playlistDropdown.css";
 import { usePlaylists } from "../../../context/playlist-context";
+import { useVideosAndCategory } from "../../../context/videos-context";
 
 function PlaylistDropdown({
   setShowPlaylistDropdown,
@@ -18,6 +19,7 @@ function PlaylistDropdown({
     usePlaylists();
 
   const token = localStorage.getItem("token");
+  const { theme } = useVideosAndCategory();
 
   function handleClosePlaylistDropdown() {
     setShowPlaylistDropdown((prev) => !prev);
@@ -37,7 +39,11 @@ function PlaylistDropdown({
 
   return (
     <div className="playlist-dropdown-container">
-      <ul className="stacked-list list-style-none playlist-stacklist">
+      <ul
+        className={`stacked-list list-style-none playlist-stacklist ${
+          theme == "dark" && "dark-theme-font-clr dark-theme-light-bg-clr dark-theme-border-clr"
+        }`}
+      >
         <li className="d-flex li-item playlist-li-item j-space-between">
           {!hideSaveToPlaylist ? <h5>Save to </h5> : <h5>Add</h5>}
           <i
@@ -78,7 +84,9 @@ function PlaylistDropdown({
             <input
               type="text"
               placeholder="title"
-              className="playlist-dropdown-inp"
+              className={`playlist-dropdown-inp ${
+                theme == "dark" && "dark-theme-font-clr dark-theme-light-bg-clr dark-theme-border-clr"
+              }`}
               value={playListInfo.title}
               onChange={(e) =>
                 setPlaylistInfo({
@@ -97,7 +105,9 @@ function PlaylistDropdown({
             <input
               type="text"
               placeholder="description"
-              className="playlist-dropdown-inp"
+              className={`playlist-dropdown-inp ${
+                theme == "dark" && "dark-theme-font-clr dark-theme-light-bg-clr dark-theme-border-clr"
+              }`}
               value={playListInfo.description}
               onChange={(e) =>
                 setPlaylistInfo({

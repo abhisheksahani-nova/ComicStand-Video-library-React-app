@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useVideosAndCategory } from "../../../context/videos-context";
 
 function Signup() {
   const [userSignupData, setUserSignupData] = useState({
@@ -15,6 +16,7 @@ function Signup() {
     useState("password");
 
   const navigate = useNavigate();
+  const { theme } = useVideosAndCategory();
 
   function handleSignup() {
     const userData = {
@@ -36,15 +38,26 @@ function Signup() {
   return (
     <>
       <section className="login_form_container d-flex">
-        <div className="card-basic login_form">
+        <div
+          className={`card-basic login_form ${
+            theme == "dark" && "dark-theme-light-bg-clr dark-theme-font-clr"
+          }`}
+        >
           <h2 className="t-align-center mt-2 mb-2">Signup</h2>
 
           <div className="inp-container mb-1">
-            <label className="inp-label d-block inp-label-required login_inp_label_resize">
+            <label
+              className={`inp-label d-block inp-label-required login_inp_label_resize ${
+                theme == "dark" && "dark-theme-font-clr"
+              }`}
+            >
               First name
             </label>
             <input
-              className="inp login_inp_resize"
+              className={`inp login_inp_resize ${
+                theme == "dark" &&
+                "dark-theme-font-clr dark-theme-light-bg-clr dark-theme-border-clr"
+              }`}
               id="inp-email"
               placeholder="Enter your first name"
               value={userSignupData.firstName}
@@ -58,11 +71,18 @@ function Signup() {
           </div>
 
           <div className="inp-container mb-1">
-            <label className="inp-label d-block inp-label-required login_inp_label_resize">
+            <label
+              className={`inp-label d-block inp-label-required login_inp_label_resize ${
+                theme == "dark" && "dark-theme-font-clr"
+              }`}
+            >
               Last name
             </label>
             <input
-              className="inp login_inp_resize"
+              className={`inp login_inp_resize ${
+                theme == "dark" &&
+                "dark-theme-font-clr dark-theme-light-bg-clr dark-theme-border-clr"
+              }`}
               id="inp-email"
               placeholder="Enter your last name"
               value={userSignupData.lastName}
@@ -76,11 +96,18 @@ function Signup() {
           </div>
 
           <div className="inp-container mb-1">
-            <label className="inp-label d-block inp-label-required login_inp_label_resize">
+            <label
+              className={`inp-label d-block inp-label-required login_inp_label_resize ${
+                theme == "dark" && "dark-theme-font-clr"
+              }`}
+            >
               Email address
             </label>
             <input
-              className="inp login_inp_resize"
+              className={`inp login_inp_resize ${
+                theme == "dark" &&
+                "dark-theme-font-clr dark-theme-light-bg-clr dark-theme-border-clr"
+              }`}
               id="inp-email"
               placeholder="Enter your email address"
               value={userSignupData.email}
@@ -98,12 +125,19 @@ function Signup() {
           </div>
 
           <div className="inp-container mb-1 p-relative">
-            <label className="inp-label d-block inp-label-required login_inp_label_resize">
+            <label
+              className={`inp-label d-block inp-label-required login_inp_label_resize ${
+                theme == "dark" && "dark-theme-font-clr"
+              }`}
+            >
               Password
             </label>
             <input
               type={passwordInputType}
-              className="inp login_inp_resize"
+              className={`inp login_inp_resize ${
+                theme == "dark" &&
+                "dark-theme-font-clr dark-theme-light-bg-clr dark-theme-border-clr"
+              }`}
               id="inp-password"
               placeholder="Enter password"
               value={userSignupData.password}
@@ -136,12 +170,19 @@ function Signup() {
           </div>
 
           <div className="inp-container mb-1">
-            <label className="inp-label d-block inp-label-required login_inp_label_resize">
+            <label
+              className={`inp-label d-block inp-label-required login_inp_label_resize ${
+                theme == "dark" && "dark-theme-font-clr"
+              }`}
+            >
               Confirm Password
             </label>
             <input
               type={confirmPasswordInputType}
-              className="inp login_inp_resize"
+              className={`inp login_inp_resize ${
+                theme == "dark" &&
+                "dark-theme-font-clr dark-theme-light-bg-clr dark-theme-border-clr"
+              }`}
               id="inp-email"
               placeholder="Enter your password again"
               value={userSignupData.confirmPassword}
@@ -168,7 +209,11 @@ function Signup() {
           <div className="inp-container mb-1">
             <div className="d-flex login_checkbox_inp_container">
               <input type="checkbox" id="checkbox-termsPolicy" />
-              <label className="inp-label inp-label-required font-small">
+              <label
+                className={`inp-label inp-label-required font-small ${
+                  theme == "dark" && "dark-theme-font-clr"
+                }`}
+              >
                 I accept all Terms & Conditions
               </label>
             </div>
@@ -193,7 +238,13 @@ function Signup() {
 
           <div className="inp-container t-align-center mb-2">
             <NavLink to="/login">
-              <small className="create_acc_link">Already have an account</small>
+              <small
+                className={`create_acc_link ${
+                  theme == "dark" && "dark-theme-font-clr"
+                }`}
+              >
+                Already have an account
+              </small>
             </NavLink>
           </div>
         </div>
