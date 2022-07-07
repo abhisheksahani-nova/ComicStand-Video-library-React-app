@@ -1,0 +1,12 @@
+:root {
+  --comicstand-bg-clr: var(--light-clr);
+  --comicstand-font-dark-clr: #bbb5ac;
+}
+
+[data-theme="dark"] {
+  --comicstand-bg-clr: #181a1b;
+}
+
+.app {
+  background-color: var(--comicstand-bg-clr);
+}

@@ -13,14 +13,17 @@ import {
 import { Routes, Route } from "react-router-dom";
 import Mockman from "mockman-js";
 import { useEffect } from "react";
+import { useVideosAndCategory } from "./context/videos-context";
 
 function App() {
+  const { theme, setTheme } = useVideosAndCategory();
+
   useEffect(() => {
     localStorage.removeItem("token");
   }, []);
 
   return (
-    <div className="App">
+    <div className="app" data-theme={theme} >
       <Routes>
         <Route path="/" element={<Homepage />}></Route>
         <Route path="/videos" element={<VideoListingPage />}></Route>

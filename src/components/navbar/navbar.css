@@ -22,3 +22,16 @@
 .videolib-nav-user-icon {
   font-size: 1.2rem;
 }
+
+.align-items-center {
+  align-items: center;
+}
+
+.theme-icon-cont {
+  gap: 2px;
+  margin-right: 2rem;
+}
+
+.dark-theme-font-clr {
+  color: var(--comicstand-font-dark-clr);
+}

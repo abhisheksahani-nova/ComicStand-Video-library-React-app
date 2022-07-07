@@ -1,10 +1,12 @@
 import React from "react";
 import "./navbar.css";
 import { useNavigate } from "react-router-dom";
+import { useVideosAndCategory } from "../../context/videos-context";
 
 function Navbar() {
   const token = localStorage.getItem("token");
   const navigate = useNavigate();
+  const { theme, setTheme } = useVideosAndCategory();
 
   function handleLogout() {
     localStorage.removeItem("token");
@@ -29,6 +31,18 @@ function Navbar() {
         </div>
 
         <div className="nav-innerContainer nav-icon-container width-reset inherit-clr mr-1 videolib-nav-icon-cont-width-reset">
+          <div
+            className="d-flex theme-icon-cont flex-d-col videolib-banner-cont align-items-center"
+            onClick={() =>
+              setTheme((prev) => (prev == "light" ? "dark" : "light"))
+            }
+          >
+            <i
+              className={`fa-solid ${theme == "light" ? "fa-moon" : "fa-sun"}`}
+            ></i>
+            <small> {theme == "light" ? "dark" : "light"} </small>
+          </div>
+
           {token ? (
             <button
               className="btn pri-cta-light-bg-clr"
