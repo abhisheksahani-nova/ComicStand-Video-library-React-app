@@ -1,6 +1,8 @@
 :root {
   --comicstand-bg-clr: var(--light-clr);
+  --comicstand-light-bg-clr:#202325;
   --comicstand-font-dark-clr: #bbb5ac;
+
 }
 
 [data-theme="dark"] {

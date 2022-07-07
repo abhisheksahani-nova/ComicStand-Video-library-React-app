@@ -35,3 +35,11 @@
 .dark-theme-font-clr {
   color: var(--comicstand-font-dark-clr);
 }
+
+.dark-theme-light-bg-clr {
+  background-color: var(--comicstand-light-bg-clr);
+}
+
+.dark-theme-border-clr {
+  border: 1px solid var(--custom-dark-clr);
+}

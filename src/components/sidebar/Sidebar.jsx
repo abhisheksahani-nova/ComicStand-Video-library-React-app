@@ -1,15 +1,25 @@
 import React from "react";
 import "./sidebar.css";
 import { useNavigate } from "react-router-dom";
+import { useVideosAndCategory } from "../../context/videos-context";
 
 function Sidebar() {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
+  const { theme } = useVideosAndCategory();
 
   return (
     <div>
-      <div className="videolib-drawer-container">
-        <div className="videolib-list-container">
+      <div
+        className={`videolib-drawer-container ${
+          theme == "dark" && "dark-theme-font-clr"
+        }`}
+      >
+        <div
+          className={`videolib-list-container ${
+            theme == "dark" && "chips-cont-border-bottom"
+          }`}
+        >
           <ul className="videolib-list">
             <li className="videolib-list-item" onClick={() => navigate("/")}>
               <i className="fa-solid fa-house videolib-drawer-icon"></i> Home
@@ -33,7 +43,11 @@ function Sidebar() {
           </ul>
         </div>
 
-        <div className="videolib-list-container">
+        <div
+          className={`videolib-list-container ${
+            theme == "dark" && "chips-cont-border-bottom"
+          }`}
+        >
           <ul className="videolib-list">
             <li
               className="videolib-list-item"
