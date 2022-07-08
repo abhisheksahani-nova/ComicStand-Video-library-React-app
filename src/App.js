@@ -16,14 +16,14 @@ import { useEffect } from "react";
 import { useVideosAndCategory } from "./context/videos-context";
 
 function App() {
-  const { theme, setTheme } = useVideosAndCategory();
+  const { theme } = useVideosAndCategory();
 
   useEffect(() => {
-    localStorage.removeItem("token");
+    localStorage.clear();
   }, []);
 
   return (
-    <div className="app" data-theme={theme} >
+    <div className="app" data-theme={theme}>
       <Routes>
         <Route path="/" element={<Homepage />}></Route>
         <Route path="/videos" element={<VideoListingPage />}></Route>
