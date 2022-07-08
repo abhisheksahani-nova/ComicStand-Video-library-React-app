@@ -5,6 +5,7 @@ import { useLikedVideos } from "../../../context/likedVideos-context";
 import { useHistoryVideos } from "../../../context/history-context";
 import { PlaylistDropdown } from "../../index";
 import { useVideosAndCategory } from "../../../context/videos-context";
+import { useNavigate } from "react-router-dom";
 
 function VerticalCard({ video }) {
   const { _id, title, channelName, img, views, year } = video;
@@ -20,6 +21,7 @@ function VerticalCard({ video }) {
 
   const { addToHistory } = useHistoryVideos();
   const { theme } = useVideosAndCategory();
+  const navigate = useNavigate();
   const [showPlaylistDropdown, setShowPlaylistDropdown] = useState(false);
 
   return (
@@ -45,7 +47,9 @@ function VerticalCard({ video }) {
           ) : (
             <i
               className="fa-solid fa-clock position-abs verticalCard-watchLater-icon"
-              onClick={() => handleAddToWatchLater(video, token)}
+              onClick={() =>
+                token ? handleAddToWatchLater(video, token) : navigate("/login")
+              }
             ></i>
           )}
 
@@ -91,12 +95,16 @@ function VerticalCard({ video }) {
             </div>
             {likedVideos.find((item) => item._id == _id) ? (
               <i
-                onClick={() => removeFromLikedVideos(_id, token)}
+                onClick={() =>
+                  token ? removeFromLikedVideos(_id, token) : navigate("/login")
+                }
                 className="fa-solid fa-thumbs-up position-abs verticalCard-like-icon"
               ></i>
             ) : (
               <i
-                onClick={() => addToLikedVideos(video, token)}
+                onClick={() =>
+                  token ? addToLikedVideos(video, token) : navigate("/login")
+                }
                 className="fa-solid fa-thumbs-up position-abs verticalCard-like-icon"
               ></i>
             )}

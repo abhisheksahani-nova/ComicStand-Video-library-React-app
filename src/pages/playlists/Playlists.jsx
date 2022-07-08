@@ -20,17 +20,19 @@ function Playlists() {
         <Sidebar />
 
         <div className="right-side-container">
-          <div className="d-flex j-space-between mb-2">
-            <h2 className={`${theme == "dark" && "dark-theme-font-clr"}`}>
-              My Playlists
-            </h2>
-            <button
-              className="btn pri-cta-light-bg-clr"
-              onClick={() => setShowPlaylistDropdown((prev) => !prev)}
-            >
-              Create New Playlist
-            </button>
-          </div>
+          {playlists?.length > 0 && (
+            <div className="d-flex j-space-between mb-2">
+              <h2 className={`${theme == "dark" && "dark-theme-font-clr"}`}>
+                My Playlists
+              </h2>
+              <button
+                className="btn pri-cta-light-bg-clr"
+                onClick={() => setShowPlaylistDropdown((prev) => !prev)}
+              >
+                Create New Playlist
+              </button>
+            </div>
+          )}
 
           {showPlaylistDropdown ? (
             <PlaylistDropdown
@@ -42,52 +44,61 @@ function Playlists() {
             ""
           )}
 
-          <div className="videolib-homepage-videos-cont">
-            {playlists.map((playlist) => {
-              return (
-                <div
-                  key={playlist._id}
-                  className={`card-basic playlist-card ${
-                    theme == "dark" &&
-                    "dark-theme-font-clr dark-theme-light-bg-clr dark-theme-border-clr"
-                  }`}
-                >
-                  <div className="badge-container">
-                    <div>
-                      <h3
-                        className={`card-heading ${
-                          theme == "dark" && "dark-theme-font-clr"
-                        }`}
-                      >
-                        {playlist.title}
-                      </h3>
-                      <small
-                        className={`card-subHeading ${
-                          theme == "dark" && "dark-theme-font-clr"
-                        }`}
-                      >
-                        {playlist.videos.length} videos
-                      </small>
+          {playlists?.length > 0 ? (
+            <div className="videolib-homepage-videos-cont">
+              {playlists.map((playlist) => {
+                return (
+                  <div
+                    key={playlist._id}
+                    className={`card-basic playlist-card ${
+                      theme == "dark" &&
+                      "dark-theme-font-clr dark-theme-light-bg-clr dark-theme-border-clr"
+                    }`}
+                  >
+                    <div className="badge-container">
+                      <div>
+                        <h3
+                          className={`card-heading ${
+                            theme == "dark" && "dark-theme-font-clr"
+                          }`}
+                        >
+                          {playlist.title}
+                        </h3>
+                        <small
+                          className={`card-subHeading ${
+                            theme == "dark" && "dark-theme-font-clr"
+                          }`}
+                        >
+                          {playlist.videos.length} videos
+                        </small>
+                      </div>
+
+                      <i
+                        className="fa-solid fa-trash-can cart_card_closeicon"
+                        onClick={() => deletePlaylist(playlist._id, token)}
+                      ></i>
                     </div>
 
-                    <i
-                      className="fa-solid fa-trash-can cart_card_closeicon"
-                      onClick={() => deletePlaylist(playlist._id, token)}
-                    ></i>
+                    <div className="card-footer">
+                      <button
+                        className="btn btn-ecommerce pri-cta-light-bg-clr"
+                        onClick={() => navigate(`/playlists/${playlist._id}`)}
+                      >
+                        View Playlist
+                      </button>
+                    </div>
                   </div>
-
-                  <div className="card-footer">
-                    <button
-                      className="btn btn-ecommerce pri-cta-light-bg-clr"
-                      onClick={() => navigate(`/playlists/${playlist._id}`)}
-                    >
-                      View Playlist
-                    </button>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+                );
+              })}
+            </div>
+          ) : (
+            <div className="d-flex empty-video-container">
+              <i className="fa-solid fa-video video-icon"></i>
+              <button className="btn pri-out-btn" onClick={() => navigate("/")}>
+                Add Videos
+              </button>
+            </div>
+          )}
         </div>
       </section>
     </div>

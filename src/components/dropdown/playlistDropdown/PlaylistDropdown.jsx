@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./playlistDropdown.css";
 import { usePlaylists } from "../../../context/playlist-context";
 import { useVideosAndCategory } from "../../../context/videos-context";
+import { useNavigate } from "react-router-dom";
 
 function PlaylistDropdown({
   setShowPlaylistDropdown,
@@ -20,6 +21,7 @@ function PlaylistDropdown({
 
   const token = localStorage.getItem("token");
   const { theme } = useVideosAndCategory();
+  const navigate = useNavigate();
 
   function handleClosePlaylistDropdown() {
     setShowPlaylistDropdown((prev) => !prev);
@@ -71,7 +73,9 @@ function PlaylistDropdown({
         {!showPlaylistInput ? (
           <li
             className="d-flex playlist-li-item cursor-p border-none"
-            onClick={() => setShowPlaylistInput(true)}
+            onClick={() =>
+              token ? setShowPlaylistInput(true) : navigate("/login")
+            }
           >
             <i className="fa-solid fa-plus playlist-add-icon"></i>
             <h5>Create New Playlist</h5>

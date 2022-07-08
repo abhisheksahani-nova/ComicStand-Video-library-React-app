@@ -1,3 +1,18 @@
-.j-space-between{
-    justify-content: space-between;
+.j-space-between {
+  justify-content: space-between;
+}
+
+.empty-video-container {
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  position: fixed;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.video-icon {
+  font-size: 10rem;
 }
