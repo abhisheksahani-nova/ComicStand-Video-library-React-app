@@ -4,6 +4,7 @@ import { useWatchLater } from "../../../context/watchLater-context";
 import { useLikedVideos } from "../../../context/likedVideos-context";
 import { useHistoryVideos } from "../../../context/history-context";
 import { PlaylistDropdown } from "../../index";
+import { useVideosAndCategory } from "../../../context/videos-context";
 
 function VerticalCard({ video }) {
   const { _id, title, channelName, img, views, year } = video;
@@ -18,11 +19,16 @@ function VerticalCard({ video }) {
     useLikedVideos();
 
   const { addToHistory } = useHistoryVideos();
+  const { theme } = useVideosAndCategory();
   const [showPlaylistDropdown, setShowPlaylistDropdown] = useState(false);
 
   return (
     <div>
-      <div className="videolib-verticalcard-resize">
+      <div
+        className={`videolib-verticalcard-resize ${
+          theme == "dark" && "dark-theme-font-clr"
+        }`}
+      >
         <div className="badge-container">
           <img
             onClick={() => addToHistory(video, token)}
@@ -54,7 +60,11 @@ function VerticalCard({ video }) {
           )}
 
           <div className="badge-container">
-            <h4 className="card-heading videolib-cardheading-resize">
+            <h4
+              className={`card-heading videolib-cardheading-resize ${
+                theme == "dark" && "dark-theme-font-clr"
+              }`}
+            >
               {title}
             </h4>
 
@@ -64,10 +74,18 @@ function VerticalCard({ video }) {
             ></i>
 
             <div className="d-flex flex-d-col">
-              <small className="card-subHeading videolib-card-subheading videolib-card-subheading-common-sty">
+              <small
+                className={`card-subHeading videolib-card-subheading videolib-card-subheading-common-sty ${
+                  theme == "dark" && "dark-theme-font-clr"
+                }`}
+              >
                 {channelName}
               </small>
-              <small className="card-subHeading videolib-card-subheading-common-sty mb-1">
+              <small
+                className={`card-subHeading videolib-card-subheading-common-sty mb-1 ${
+                  theme == "dark" && "dark-theme-font-clr"
+                }`}
+              >
                 {views} views . {year} years ago
               </small>
             </div>

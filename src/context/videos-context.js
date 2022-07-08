@@ -6,6 +6,11 @@ const VideosContext = createContext();
 const VideosProvider = ({ children }) => {
   const [videos, setVideos] = useState([]);
   const [category, setCategory] = useState([]);
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+  }, [theme]);
 
   useEffect(() => {
     (async () => {
@@ -30,7 +35,7 @@ const VideosProvider = ({ children }) => {
   }, []);
 
   return (
-    <VideosContext.Provider value={{ videos, category }}>
+    <VideosContext.Provider value={{ videos, category, theme, setTheme }}>
       {children}
     </VideosContext.Provider>
   );

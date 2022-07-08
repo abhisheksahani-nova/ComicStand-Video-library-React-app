@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./playlistDropdown.css";
 import { usePlaylists } from "../../../context/playlist-context";
+import { useVideosAndCategory } from "../../../context/videos-context";
 
 function PlaylistDropdown({
   setShowPlaylistDropdown,
@@ -18,6 +19,7 @@ function PlaylistDropdown({
     usePlaylists();
 
   const token = localStorage.getItem("token");
+  const { theme } = useVideosAndCategory();
 
   function handleClosePlaylistDropdown() {
     setShowPlaylistDropdown((prev) => !prev);
@@ -37,8 +39,13 @@ function PlaylistDropdown({
 
   return (
     <div className="playlist-dropdown-container">
-      <ul className="stacked-list list-style-none playlist-stacklist">
-        <li className="d-flex li-item playlist-li-item j-space-between">
+      <ul
+        className={`stacked-list list-style-none playlist-stacklist ${
+          theme == "dark" &&
+          "dark-theme-font-clr dark-theme-light-bg-clr dark-theme-border-clr"
+        }`}
+      >
+        <li className="d-flex playlist-li-item j-space-between light-border-bottom">
           {!hideSaveToPlaylist ? <h5>Save to </h5> : <h5>Add</h5>}
           <i
             className="fa-solid fa-rectangle-xmark cursor-p"
@@ -51,7 +58,7 @@ function PlaylistDropdown({
             return (
               <li
                 key={playlist._id}
-                className="d-flex li-item playlist-li-item cursor-p"
+                className="d-flex playlist-li-item cursor-p border-none"
                 onClick={() =>
                   handleAddNewVideoToPlaylist(video, playlist._id, token)
                 }
@@ -63,7 +70,7 @@ function PlaylistDropdown({
 
         {!showPlaylistInput ? (
           <li
-            className="d-flex li-item playlist-li-item cursor-p"
+            className="d-flex playlist-li-item cursor-p border-none"
             onClick={() => setShowPlaylistInput(true)}
           >
             <i className="fa-solid fa-plus playlist-add-icon"></i>
@@ -74,11 +81,14 @@ function PlaylistDropdown({
         )}
 
         {showPlaylistInput ? (
-          <li className="d-flex li-item playlist-li-item">
+          <li className="d-flex playlist-li-item border-none">
             <input
               type="text"
               placeholder="title"
-              className="playlist-dropdown-inp"
+              className={`playlist-dropdown-inp ${
+                theme == "dark" &&
+                "dark-theme-font-clr dark-theme-light-bg-clr dark-theme-border-clr"
+              }`}
               value={playListInfo.title}
               onChange={(e) =>
                 setPlaylistInfo({
@@ -93,11 +103,14 @@ function PlaylistDropdown({
         )}
 
         {showPlaylistInput ? (
-          <li className="d-flex li-item playlist-li-item">
+          <li className="d-flex playlist-li-item border-none">
             <input
               type="text"
               placeholder="description"
-              className="playlist-dropdown-inp"
+              className={`playlist-dropdown-inp ${
+                theme == "dark" &&
+                "dark-theme-font-clr dark-theme-light-bg-clr dark-theme-border-clr"
+              }`}
               value={playListInfo.description}
               onChange={(e) =>
                 setPlaylistInfo({
@@ -112,7 +125,7 @@ function PlaylistDropdown({
         )}
 
         {showPlaylistInput ? (
-          <li className="d-flex li-item playlist-li-item j-content-right">
+          <li className="d-flex playlist-li-item j-content-right border-none">
             <button
               className="btn pri-cta-bg-clr playlist-create-btn-resize"
               onClick={() => handleCreateNewPlaylist()}

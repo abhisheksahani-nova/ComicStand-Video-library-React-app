@@ -6,10 +6,12 @@ import {
   LargeHorizontalCard,
 } from "../../../components/index";
 import { usePlaylists } from "../../../context/playlist-context";
+import { useVideosAndCategory } from "../../../context/videos-context";
 
 function Playlist() {
   const { playlistId } = useParams();
   const { playlists, deletePlaylist } = usePlaylists();
+  const { theme } = useVideosAndCategory();
 
   const token = localStorage.getItem("token");
 
@@ -23,7 +25,9 @@ function Playlist() {
 
         <div className="right-side-container">
           <div className="d-flex j-space-between mb-2">
-            <h2>My Playlists</h2>
+            <h2 className={`${theme == "dark" && "dark-theme-font-clr"}`}>
+              My Playlists
+            </h2>
             <button
               className="btn pri-cta-light-bg-clr"
               onClick={() => deletePlaylist(playlistId, token)}

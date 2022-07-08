@@ -24,7 +24,7 @@
 }
 
 .playlist-li-item {
-  padding-left: 8px;
+  padding: 0.5rem;
 }
 
 .playlist-dropdown-inp {
@@ -47,4 +47,20 @@
 
 .playlist-add-icon {
   margin-right: 5px;
+}
+
+.dark-theme-light-bg-clr {
+  background-color: var(--comicstand-light-bg-clr);
+}
+
+.dark-theme-border-clr {
+  border: 1px solid var(--custom-dark-clr);
+}
+
+.border-none {
+  border: none;
+}
+
+.light-border-bottom {
+  border-bottom: 1px solid var(--light-primary-clr);
 }
