@@ -12,6 +12,12 @@
   background-color: var(--gray-shade1);
 }
 
-.pri-cta-light-bg-clr{
+.pri-cta-light-bg-clr {
   background-color: var(--gray-shade3);
+}
+
+.pri-out-btn {
+  background-color: var(--light-clr);
+  color: var(--gray-shade3);
+  border: 1px solid var(--gray-shade3);
 }

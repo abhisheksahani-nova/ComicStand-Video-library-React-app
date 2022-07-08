@@ -39,3 +39,14 @@
 .dark-theme-font-clr {
   color: var(--comicstand-font-dark-clr);
 }
+
+.guest-btn {
+  width: 90%;
+  padding: 0.6rem 0;
+  margin-bottom: 8px;
+}
+
+.guest-btn:hover {
+  background-color: var(--gray-shade3);
+  color: var(--light-clr);
+}

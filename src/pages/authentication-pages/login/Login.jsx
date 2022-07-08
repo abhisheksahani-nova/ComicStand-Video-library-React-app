@@ -26,6 +26,23 @@ function Login() {
     })();
   }
 
+  function handleGuestLogin() {
+    const userLoginData = {
+      email: "abhishekSahani@gmail.com",
+      password: "abhishekSahani123",
+    };
+
+    (async () => {
+      try {
+        const response = await axios.post("/api/auth/login", userLoginData);
+        localStorage.setItem("token", response.data.encodedToken);
+        navigate("/");
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+  }
+
   return (
     <section className="login_form_container d-flex">
       <div
@@ -126,6 +143,18 @@ function Login() {
         </div>
 
         <div className="inp-container ml-1 mb-1">
+          <button
+            className={`btn guest-btn ${
+              theme == "dark"
+                ? "dark-theme-light-bg-clr dark-theme-border-clr "
+                : "pri-out-btn"
+            }`}
+            type="button"
+            onClick={() => handleGuestLogin()}
+          >
+            Guest login
+          </button>
+
           <button
             className="btn login_custom_btn pri-cta-light-bg-clr"
             type="button"
